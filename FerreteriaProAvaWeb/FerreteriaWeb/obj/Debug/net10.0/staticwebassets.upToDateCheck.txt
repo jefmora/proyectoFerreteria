@@ -1,7 +1,41 @@
 wwwroot\css\core.css
+wwwroot\css\iecss.css
 wwwroot\css\page-auth.css
 wwwroot\css\site.css
+wwwroot\css\style.css
 wwwroot\favicon.ico
+wwwroot\images\bann1.jpg
+wwwroot\images\bann2.jpg
+wwwroot\images\banner728.jpg
+wwwroot\images\bar_bg.gif
+wwwroot\images\bg.jpg
+wwwroot\images\big_pic.jpg
+wwwroot\images\csscreme.jpg
+wwwroot\images\de.gif
+wwwroot\images\en.gif
+wwwroot\images\footer_bg.gif
+wwwroot\images\footer_logo.png
+wwwroot\images\header_bg.jpg
+wwwroot\images\link_bg.gif
+wwwroot\images\logo.png
+wwwroot\images\menu_bg.gif
+wwwroot\images\menu_divider.gif
+wwwroot\images\menu_title_bg.gif
+wwwroot\images\navbullet.png
+wwwroot\images\p1.jpg
+wwwroot\images\p1.png
+wwwroot\images\p2.jpg
+wwwroot\images\p3.jpg
+wwwroot\images\p4.jpg
+wwwroot\images\p5.jpg
+wwwroot\images\p6.jpg
+wwwroot\images\p7.jpg
+wwwroot\images\payment.gif
+wwwroot\images\shoppingcart.png
+wwwroot\images\slider_bg.gif
+wwwroot\images\thumb1.jpg
+wwwroot\images\thumb2.jpg
+wwwroot\js\boxOver.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -63,67 +97,70 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\css\core.css
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\css\page-auth.css
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\css\site.css
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\favicon.ico
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\js\site.js
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap.css
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.js
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery-validation\dist\additional-methods.js
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery-validation\dist\jquery.validate.js
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery-validation\LICENSE.md
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery\dist\jquery.js
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery\dist\jquery.min.js
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery\dist\jquery.min.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery\dist\jquery.slim.js
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery\dist\jquery.slim.min.js
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery\dist\jquery.slim.min.map
-C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery\LICENSE.txt
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery\dist\jquery.slim.min.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery\dist\jquery.slim.min.js
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery\dist\jquery.slim.js
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery\dist\jquery.min.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery\dist\jquery.min.js
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery\dist\jquery.js
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery-validation\LICENSE.md
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery-validation\dist\jquery.validate.js
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery-validation\dist\additional-methods.js
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.js
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap.css
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\js\site.js
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\js\boxOver.js
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\favicon.ico
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\css\style.css
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\css\site.css
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\css\page-auth.css
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\css\iecss.css
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\css\core.css
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\wwwroot\lib\jquery\LICENSE.txt
