@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Inicio de Sesión";
+}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-4">
+
+        <div class="card shadow">
+            <div class="card-header text-center">
+                <h3>Proyecto Ferreteria</h3>
+            </div>
+
+            <div class="card-body">
+
+                <div class="mb-3">
+                    <label class="form-label">Usuario</label>
+                    <input type="text"
+                           class="form-control"
+                           placeholder="Ingrese su usuario">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Contraseña</label>
+                    <input type="password"
+                           class="form-control"
+                           placeholder="Ingrese su contraseña">
+                </div>
+
+                <a asp-controller="Home"
+                   asp-action="Index"
+                   class="btn btn-primary w-100">
+                    Ingresar
+                </a>
+
+                <div class="text-center mt-3">
+                    <span>¿No tienes una cuenta?</span>
+                    <a asp-controller="Auth"
+                       asp-action="Register">
+                        Regístrate aquí
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
