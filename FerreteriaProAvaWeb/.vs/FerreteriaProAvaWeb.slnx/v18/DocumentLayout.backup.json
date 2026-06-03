@@ -1,30 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\",
+  "WorkspaceRootPath": "C:\\Repositorios Universidad\\proyectoFerreteria\\FerreteriaProAvaWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\users\\deyno\\desktop\\todo\\universidad-programacion\\programacion avanzada web\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\repositorios universidad\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\views\\shared\\layoutinicio.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\views\\shared\\layoutinicio.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\users\\deyno\\desktop\\todo\\universidad-programacion\\programacion avanzada web\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\views\\parciales\\_macros.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\views\\parciales\\_macros.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\users\\deyno\\desktop\\todo\\universidad-programacion\\programacion avanzada web\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\users\\deyno\\desktop\\todo\\universidad-programacion\\programacion avanzada web\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\views\\auth\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\views\\auth\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\users\\deyno\\desktop\\todo\\universidad-programacion\\programacion avanzada web\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\wwwroot\\css\\page-auth.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\wwwroot\\css\\page-auth.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\users\\deyno\\desktop\\todo\\universidad-programacion\\programacion avanzada web\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\wwwroot\\css\\core.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\wwwroot\\css\\core.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\repositorios universidad\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,12 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 55,
+          "SelectedChildIndex": 56,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -230,6 +210,14 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{ca8cc5c7-0231-406a-95cd-aa5ed6ac0190}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
@@ -253,85 +241,29 @@
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d114938f-591c-46cf-a785-500a82d97410}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Repositorios Universidad\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "FerreteriaWeb\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Repositorios Universidad\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "FerreteriaWeb\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-03T03:35:26.132Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "FerreteriaWeb\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "FerreteriaWeb\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA8AAAAAAAAAA==",
+              "Title": "LayoutInicio.cshtml",
+              "DocumentMoniker": "C:\\Repositorios Universidad\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Shared\\LayoutInicio.cshtml",
+              "RelativeDocumentMoniker": "FerreteriaWeb\\Views\\Shared\\LayoutInicio.cshtml",
+              "ToolTip": "C:\\Repositorios Universidad\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Shared\\LayoutInicio.cshtml*",
+              "RelativeToolTip": "FerreteriaWeb\\Views\\Shared\\LayoutInicio.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-03T03:20:26.934Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_Macros.cshtml",
-              "DocumentMoniker": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Parciales\\_Macros.cshtml",
-              "RelativeDocumentMoniker": "FerreteriaWeb\\Views\\Parciales\\_Macros.cshtml",
-              "ToolTip": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Parciales\\_Macros.cshtml",
-              "RelativeToolTip": "FerreteriaWeb\\Views\\Parciales\\_Macros.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAwwBEAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-03T03:19:10.175Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "FerreteriaWeb\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "FerreteriaWeb\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T03:17:55.429Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "page-auth.css",
-              "DocumentMoniker": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\wwwroot\\css\\page-auth.css",
-              "RelativeDocumentMoniker": "FerreteriaWeb\\wwwroot\\css\\page-auth.css",
-              "ToolTip": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\wwwroot\\css\\page-auth.css",
-              "RelativeToolTip": "FerreteriaWeb\\wwwroot\\css\\page-auth.css",
-              "ViewState": "AgIAACwAAAAAAAAAAAAAADUAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-06-03T03:16:58.042Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "core.css",
-              "DocumentMoniker": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\wwwroot\\css\\core.css",
-              "RelativeDocumentMoniker": "FerreteriaWeb\\wwwroot\\css\\core.css",
-              "ToolTip": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\wwwroot\\css\\core.css",
-              "RelativeToolTip": "FerreteriaWeb\\wwwroot\\css\\core.css",
-              "ViewState": "AgIAAFNpAAAAAAAAAADwv3NpAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-06-03T03:16:09.328Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ForgotPassword.cshtml",
-              "DocumentMoniker": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Auth\\ForgotPassword.cshtml",
-              "RelativeDocumentMoniker": "FerreteriaWeb\\Views\\Auth\\ForgotPassword.cshtml",
-              "ToolTip": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Auth\\ForgotPassword.cshtml",
-              "RelativeToolTip": "FerreteriaWeb\\Views\\Auth\\ForgotPassword.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-03T03:14:17.268Z",
+              "WhenOpened": "2026-06-03T03:34:53.703Z",
               "EditorCaption": ""
             }
           ]
