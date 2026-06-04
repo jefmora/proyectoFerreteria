@@ -326,3 +326,25 @@ C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb
 C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\q2rku0ngt6-{0}-ve6wjaoj24-ve6wjaoj24.gz
 C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\kcebo308ip-{0}-b5bvho7hiv-b5bvho7hiv.gz
 C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\dojmczlwfc-{0}-xhbu0o0ue3-xhbu0o0ue3.gz
+C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\icaht48nxp-{0}-dd99rgsico-dd99rgsico.gz
+C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\thrg0ulj97-{0}-dzlpxtpe7j-dzlpxtpe7j.gz
+C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\8aj6sr6haj-{0}-yapowcjs8b-yapowcjs8b.gz
+C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\6nrfgz2h0s-{0}-ojfd64oi4g-ojfd64oi4g.gz
+C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\n69eta30wr-{0}-aa2pylk127-aa2pylk127.gz
+C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\s7ndzh9zux-{0}-4d3ccf68ki-4d3ccf68ki.gz
+C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\cl2eta0uj5-{0}-xmya1ckinp-xmya1ckinp.gz
+C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\ei7y3bwry9-{0}-au4pi8zv1g-au4pi8zv1g.gz
+C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\f0ul8lnhap-{0}-c6gbnysyx0-c6gbnysyx0.gz
+C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\m416ldgog8-{0}-q9cr5me4d7-q9cr5me4d7.gz
+C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\6vi0gpuv9v-{0}-v1scq0wgo3-v1scq0wgo3.gz
+C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\lbz83wz2sl-{0}-y2ea9kvsf6-y2ea9kvsf6.gz
+C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\i8qkzf1z4t-{0}-vb205osfee-vb205osfee.gz
+C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\m8pmo7fkk2-{0}-s1z0o21rrk-s1z0o21rrk.gz
+C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\zxa6vmepld-{0}-q46ry7au64-q46ry7au64.gz
+C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\vav47yd0b6-{0}-uyqknvf41h-uyqknvf41h.gz
+C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\wcah2g6p1g-{0}-tzmoj7fmxh-tzmoj7fmxh.gz
+C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\7is0kfg450-{0}-mzg0i66ppt-mzg0i66ppt.gz
+C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\5f1xdh5z47-{0}-462rccmaov-462rccmaov.gz
+C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\q2rku0ngt6-{0}-ve6wjaoj24-ve6wjaoj24.gz
+C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\kcebo308ip-{0}-b5bvho7hiv-b5bvho7hiv.gz
+C:\Users\deyno\Desktop\Todo\Universidad-Programacion\Programacion Avanzada Web\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\dojmczlwfc-{0}-xhbu0o0ue3-xhbu0o0ue3.gz

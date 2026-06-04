@@ -43,8 +43,8 @@
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Mi Cuenta</button>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">Iniciar Sesión</button>
-                            <button class="dropdown-item" type="button">Registrarse</button>
+                            <a asp-action="LoginBasic" asp-controller="Auth" class="dropdown-item">Iniciar Sesión</a>
+                            <a asp-action="RegisterBasic" asp-controller="Auth" class="dropdown-item">Registrarse</a>
                         </div>
                     </div>
                     <div class="btn-group mx-2">
