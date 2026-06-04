@@ -30,15 +30,6 @@ wwwroot\img\product-6.jpg
 wwwroot\img\product-7.jpg
 wwwroot\img\product-8.jpg
 wwwroot\img\product-9.jpg
-wwwroot\img\user.jpg
-wwwroot\img\vendor-1.jpg
-wwwroot\img\vendor-2.jpg
-wwwroot\img\vendor-3.jpg
-wwwroot\img\vendor-4.jpg
-wwwroot\img\vendor-5.jpg
-wwwroot\img\vendor-6.jpg
-wwwroot\img\vendor-7.jpg
-wwwroot\img\vendor-8.jpg
 wwwroot\js\boxOver.js
 wwwroot\js\main.js
 wwwroot\js\site.js
