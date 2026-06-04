@@ -1,0 +1,23 @@
+## Visual Studio - Archivos de configuración y caché
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Carpetas de compilación (Código generado automáticamente)
+[Bb]in/
+[Oo]bj/
+
+## Archivos temporales de compilación y publicación de .NET
+*.exe
+*.dll
+*.pdb
+*.cache
+*.json.cache
+*.dtbcache.v2
+*.futdcache.v2
+
+## Archivos de Front-End / Web Assets temporales
+.staticwebassets.runtime.json
+_built/
