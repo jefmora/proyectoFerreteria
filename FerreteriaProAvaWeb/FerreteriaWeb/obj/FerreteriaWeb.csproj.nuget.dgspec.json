@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\FerreteriaWeb.csproj": {}
+    "C:\\Repositorios Universidad\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\FerreteriaWeb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\FerreteriaWeb.csproj": {
+    "C:\\Repositorios Universidad\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\FerreteriaWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\FerreteriaWeb.csproj",
+        "projectUniqueName": "C:\\Repositorios Universidad\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\FerreteriaWeb.csproj",
         "projectName": "FerreteriaWeb",
-        "projectPath": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\FerreteriaWeb.csproj",
-        "packagesPath": "C:\\Users\\deyno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\obj\\",
+        "projectPath": "C:\\Repositorios Universidad\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\FerreteriaWeb.csproj",
+        "packagesPath": "C:\\Users\\jefer\\.nuget\\packages\\",
+        "outputPath": "C:\\Repositorios Universidad\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\deyno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jefer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

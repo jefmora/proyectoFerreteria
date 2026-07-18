@@ -1,38 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\",
+  "WorkspaceRootPath": "C:\\Repositorios Universidad\\proyectoFerreteria\\FerreteriaProAvaWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\users\\deyno\\desktop\\todo\\universidad-programacion\\programacion avanzada web\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\views\\shared\\layoutinicio.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\repositorios universidad\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\views\\shared\\layoutinicio.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\views\\shared\\layoutinicio.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\users\\deyno\\desktop\\todo\\universidad-programacion\\programacion avanzada web\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\users\\deyno\\desktop\\todo\\universidad-programacion\\programacion avanzada web\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\users\\deyno\\desktop\\todo\\universidad-programacion\\programacion avanzada web\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\users\\deyno\\desktop\\todo\\universidad-programacion\\programacion avanzada web\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\users\\deyno\\desktop\\todo\\universidad-programacion\\programacion avanzada web\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\users\\deyno\\desktop\\todo\\universidad-programacion\\programacion avanzada web\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\users\\deyno\\desktop\\todo\\universidad-programacion\\programacion avanzada web\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\views\\auth\\loginbasic.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\views\\auth\\loginbasic.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,12 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 58,
+          "SelectedChildIndex": 55,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -238,6 +206,14 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{ca8cc5c7-0231-406a-95cd-aa5ed6ac0190}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
@@ -261,111 +237,16 @@
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d114938f-591c-46cf-a785-500a82d97410}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "FerreteriaWeb\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "FerreteriaWeb\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-04T01:53:21.546Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeDocumentMoniker": "FerreteriaWeb\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeToolTip": "FerreteriaWeb\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-04T01:52:10.855Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Error.cshtml",
-              "DocumentMoniker": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Shared\\Error.cshtml",
-              "RelativeDocumentMoniker": "FerreteriaWeb\\Views\\Shared\\Error.cshtml",
-              "ToolTip": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Shared\\Error.cshtml",
-              "RelativeToolTip": "FerreteriaWeb\\Views\\Shared\\Error.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-04T01:52:09.774Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "LayoutInicio.cshtml",
-              "DocumentMoniker": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Shared\\LayoutInicio.cshtml",
+              "DocumentMoniker": "C:\\Repositorios Universidad\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Shared\\LayoutInicio.cshtml",
               "RelativeDocumentMoniker": "FerreteriaWeb\\Views\\Shared\\LayoutInicio.cshtml",
-              "ToolTip": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Shared\\LayoutInicio.cshtml",
+              "ToolTip": "C:\\Repositorios Universidad\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Shared\\LayoutInicio.cshtml",
               "RelativeToolTip": "FerreteriaWeb\\Views\\Shared\\LayoutInicio.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAC4AAAB1AAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAEwDgAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-04T01:52:08.369Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "FerreteriaWeb\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "FerreteriaWeb\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-04T01:50:49.174Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "FerreteriaWeb\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "FerreteriaWeb\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-04T01:50:04.162Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "LoginBasic.cshtml",
-              "DocumentMoniker": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Auth\\LoginBasic.cshtml",
-              "RelativeDocumentMoniker": "FerreteriaWeb\\Views\\Auth\\LoginBasic.cshtml",
-              "ToolTip": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Auth\\LoginBasic.cshtml",
-              "RelativeToolTip": "FerreteriaWeb\\Views\\Auth\\LoginBasic.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-04T01:49:43.531Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "FerreteriaWeb\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "FerreteriaWeb\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-04T01:48:59.213Z",
+              "WhenOpened": "2026-07-18T17:04:23.394Z",
               "EditorCaption": ""
             }
           ]
