@@ -1,25 +1,110 @@
-﻿@{
-    ViewData["Title"] = "Mi Carrito";
-}
+﻿@model FerreteriaWeb.Models.CarritoModel
 
-<div class="container mt-5">
+<h2>Carrito de Compras</h2>
+<div class="container mt-4">
 
-    <h2 class="mb-4">
-        🛒 Mi Carrito
-    </h2>
+    <div class="d-flex justify-content-between align-items-center mb-4">
 
-    <div class="alert alert-info">
+        <div>
+            <h2 class="fw-bold">
+                <i class="bi bi-cart3"></i> Mi carrito
+            </h2>
 
-        Tu carrito está vacío.
+            <p class="text-muted mb-0">
+                @Model.Items.Count producto(s) en el carrito
+            </p>
+        </div>
 
     </div>
 
-    <a asp-controller="Home"
-       asp-action="Index"
-       class="btn btn-primary">
 
-        Continuar comprando
+@if (Model.Items.Count == 0)
+{
+    <div class="alert alert-warning">
+        El carrito está vacío.
+    </div>
+}
+else
+{
+    <table class="table table-bordered">
 
+            <thead class="table-dark text-center">
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+
+        <tbody>
+
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+
+                        <td class="align-middle">
+                            <strong>@item.Producto.Nombre</strong>
+                        </td>
+
+                        <td class="text-center">
+                            ₡ @item.Producto.Precio.ToString("N2")
+                        </td>
+
+                        <td class="text-center">
+                            @item.Cantidad
+                        </td>
+
+                        <td class="text-center fw-bold text-success">
+                            ₡ @item.Total.ToString("N2")
+                        </td>
+
+                        <td class="text-center">
+                        <a asp-action="Disminuir"
+                           asp-route-id="@item.Producto.IdProducto"
+                           class="btn btn-warning btn-sm">
+                            -
+                        </a>
+
+                        <a asp-action="Aumentar"
+                           asp-route-id="@item.Producto.IdProducto"
+                           class="btn btn-success btn-sm">
+                            +
+                        </a>
+
+                        <a asp-action="Eliminar"
+                           asp-route-id="@item.Producto.IdProducto"
+                           class="btn btn-danger btn-sm">
+                            Eliminar
+                        </a>
+
+                    </td>
+
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+
+    <div class="text-right">
+
+        <h5>Subtotal: ₡ @Model.Subtotal.ToString("N2")</h5>
+
+        <h5>IVA: ₡ @Model.IVA.ToString("N2")</h5>
+
+        <h4>Total: ₡ @Model.Total.ToString("N2")</h4>
+
+    </div>
+    <a asp-action="Vaciar"
+       class="btn btn-danger"
+       onclick="return confirm('¿Desea vaciar el carrito?');">
+        Vaciar carrito
+    </a>
+    <a class="btn btn-success ms-2">
+        Finalizar compra
     </a>
 
+    }
 </div>
