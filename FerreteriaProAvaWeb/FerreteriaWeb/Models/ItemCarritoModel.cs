@@ -1,8 +1,8 @@
-﻿namespace Ferreteria.Models
+﻿namespace FerreteriaWeb.Models
 {
     public class ItemCarritoModel
     {
-        public ProductoModel Producto { get; set; }
+        public ProductoModel Producto { get; set; } = new ProductoModel();
 
         public int Cantidad { get; set; }
 

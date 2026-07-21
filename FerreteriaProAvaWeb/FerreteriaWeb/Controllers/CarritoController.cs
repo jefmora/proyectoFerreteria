@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Ferreteria.Controllers
+namespace FerreteriaWeb.Controllers
 {
     public class CarritoController : Controller
     {
