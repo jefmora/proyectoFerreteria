@@ -4,7 +4,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Registrar IHttpContextAccessor
-builder.Services.AddHttpContextAccessor();
+
+// Registrar IHttpClientFactory en el contenedor de dependencias
+builder.Services.AddHttpClient();
+builder.Services.AddSession();
 
 var app = builder.Build();
 
@@ -16,6 +19,10 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days.
     app.UseHsts();
 }
+
+app.UseSession();
+
+app.UseHsts();
 
 app.UseHttpsRedirection();
 

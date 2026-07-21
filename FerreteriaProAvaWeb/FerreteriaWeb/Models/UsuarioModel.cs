@@ -1,0 +1,17 @@
+﻿namespace FerreteriaWeb.Models
+{
+    public class UsuarioModel
+    {
+        public int Consecutivo { get; set; }
+        public string Identificacion { get; set; } = string.Empty;
+        public string Nombre { get; set; } = string.Empty;
+        public string CorreoElectronico { get; set; } = string.Empty;
+        public string Contrasenna { get; set; } = string.Empty;
+        public bool Estado { get; set; }
+        public bool UsaContrasennaTemp { get; set; }
+        public string ConfirmarContrasenna { get; set; } = string.Empty;
+        public string Token { get; set; } = string.Empty;
+        public int ConsecutivoRol { get; set; }
+        public string NombreRol { get; set; } = string.Empty;
+    }
+}

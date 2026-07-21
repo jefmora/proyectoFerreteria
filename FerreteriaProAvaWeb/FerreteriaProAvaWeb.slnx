@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="FerreteriaAPI/FerreteriaAPI.csproj" Id="ea86f4b7-3e8b-4daa-9a05-dae7b7e922f8" />
   <Project Path="FerreteriaWeb/FerreteriaWeb.csproj" />
 </Solution>

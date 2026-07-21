@@ -1,0 +1,219 @@
+﻿@model FerreteriaWeb.Models.UsuarioModel
+
+@{
+    ViewData["Title"] = "Configuración de Cuenta";
+}
+
+@section PageStyles {
+    <link rel="stylesheet" href="~/css/page-auth.css">
+    <link rel="stylesheet" href="~/css/core.css">
+}
+
+<div class="container-xxl flex-grow-1 container-p-y">
+
+    <!-- Encabezado de la página -->
+    <div class="d-flex align-items-center justify-content-between mb-4">
+        <h4 class="fw-bold m-0">
+            <span class="text-muted fw-light">Ajustes /</span> Configuración de Cuenta
+        </h4>
+        <span class="badge bg-label-primary px-3 py-2 rounded-pill fs-6">
+            <i class="bx bx-shield-quarter me-1"></i> Rol: @(string.IsNullOrEmpty(Model?.NombreRol) ? "Usuario" : Model.NombreRol)
+        </span>
+    </div>
+
+    <div class="row">
+
+        <!-- 1. Tarjeta de Perfil de Usuario -->
+        <div class="col-xl-6 col-lg-6 mb-4">
+            <div class="card shadow border-0 h-100">
+                <div class="card-header bg-primary text-white d-flex align-items-center justify-content-between py-3">
+                    <div class="d-flex align-items-center">
+                        <i class="bx bx-user-circle fs-3 me-2"></i>
+                        <h5 class="card-title text-white m-0 fw-semibold">Información del Perfil</h5>
+                    </div>
+                    <i class="bx bx-id-card fs-3 opacity-75"></i>
+                </div>
+
+                <div class="card-body pt-4">
+
+                    <!-- Avatar/Iniciales Header -->
+                    <div class="d-flex align-items-center mb-4 p-3 bg-light rounded-3">
+                        <div class="avatar avatar-md me-3">
+                            <span class="avatar-initial rounded-circle bg-primary text-white fs-4 fw-bold">
+                                @(string.IsNullOrEmpty(Model?.Nombre) ? "U" : Model.Nombre.Substring(0, 1).ToUpper())
+                            </span>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-bold">@Model?.Nombre</h6>
+                            <small class="text-muted">@Model?.CorreoElectronico</small>
+                        </div>
+                    </div>
+
+                    <!-- Mensaje de Alerta para Perfil -->
+                    @if (ViewBag.MensajePerfil != null)
+                    {
+                        <div class="alert alert-info alert-dismissible fade show text-center mb-4" role="alert">
+                            <i class="bx bx-info-circle me-1"></i> @ViewBag.MensajePerfil
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+
+                    <form asp-controller="Usuario" asp-action="CambiarPerfil" method="post">
+
+                        <!-- Cédula / Identificación -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold" asp-for="Identificacion">Identificación / Cédula</label>
+                            <div class="input-group input-group-merge">
+                                <span class="input-group-text"><i class="bx bx-card"></i></span>
+                                <input asp-for="Identificacion"
+                                       type="text"
+                                       class="form-control"
+                                       placeholder="Número de cédula"
+                                       required />
+                            </div>
+                        </div>
+
+                        <!-- Nombre Completo -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold" asp-for="Nombre">Nombre Completo</label>
+                            <div class="input-group input-group-merge">
+                                <span class="input-group-text"><i class="bx bx-user"></i></span>
+                                <input asp-for="Nombre"
+                                       type="text"
+                                       class="form-control"
+                                       placeholder="Nombre completo"
+                                       required />
+                            </div>
+                        </div>
+
+                        <!-- Correo Electrónico -->
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold" asp-for="CorreoElectronico">Correo Electrónico</label>
+                            <div class="input-group input-group-merge">
+                                <span class="input-group-text"><i class="bx bx-envelope"></i></span>
+                                <input asp-for="CorreoElectronico"
+                                       type="email"
+                                       class="form-control"
+                                       placeholder="correo@ejemplo.com"
+                                       required />
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
+                            <i class="bx bx-save me-1"></i> Guardar Cambios
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Tarjeta de Seguridad (Cambio de Contraseña) -->
+        <div class="col-xl-6 col-lg-6 mb-4">
+            <div class="card shadow border-0 h-100">
+                <div class="card-header bg-dark text-white d-flex align-items-center justify-content-between py-3">
+                    <div class="d-flex align-items-center">
+                        <i class="bx bx-shield-quarter fs-3 me-2 text-warning"></i>
+                        <h5 class="card-title text-white m-0 fw-semibold">Seguridad de la Cuenta</h5>
+                    </div>
+                    <i class="bx bx-lock-alt fs-3 text-warning"></i>
+                </div>
+
+                <div class="card-body pt-4">
+
+                    <!-- Mensaje de Alerta para Seguridad -->
+                    @if (ViewBag.MensajeSeguridad != null)
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show text-center mb-4" role="alert">
+                            <i class="bx bx-error-circle me-1"></i> @ViewBag.MensajeSeguridad
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+
+                    <!-- Mensaje Dinámico de JS para Error de Coincidencia -->
+                    <div id="errorPassword" class="alert alert-danger text-center mb-4 d-none" role="alert">
+                        <i class="bx bx-x-circle me-1"></i> Las contraseñas no coinciden. Por favor verifícalas.
+                    </div>
+
+                    <form id="formCambiarContrasenna" asp-controller="Usuario" asp-action="CambiarContrasenna" method="post">
+
+                        <!-- Nueva Contraseña -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold" asp-for="Contrasenna">Nueva Contraseña</label>
+                            <div class="input-group input-group-merge">
+                                <span class="input-group-text"><i class="bx bx-lock-open-alt"></i></span>
+                                <input asp-for="Contrasenna"
+                                       id="txtContrasenna"
+                                       type="password"
+                                       class="form-control"
+                                       placeholder="••••••••"
+                                       required />
+                                <span class="input-group-text cursor-pointer" onclick="togglePasswordVisibility('txtContrasenna', this)">
+                                    <i class="bx bx-hide"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Confirmar Nueva Contraseña -->
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold" asp-for="ConfirmarContrasenna">Confirmar Nueva Contraseña</label>
+                            <div class="input-group input-group-merge">
+                                <span class="input-group-text"><i class="bx bx-check-shield"></i></span>
+                                <input asp-for="ConfirmarContrasenna"
+                                       id="txtConfirmarContrasenna"
+                                       type="password"
+                                       class="form-control"
+                                       placeholder="••••••••"
+                                       required />
+                                <span class="input-group-text cursor-pointer" onclick="togglePasswordVisibility('txtConfirmarContrasenna', this)">
+                                    <i class="bx bx-hide"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-warning text-dark w-100 py-2 fw-semibold">
+                            <i class="bx bx-key me-1"></i> Actualizar Contraseña
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // 1. Validar que las contraseñas coincidan antes de enviar
+        document.getElementById('formCambiarContrasenna').addEventListener('submit', function (e) {
+            const pass = document.getElementById('txtContrasenna').value;
+            const confirmPass = document.getElementById('txtConfirmarContrasenna').value;
+            const errorDiv = document.getElementById('errorPassword');
+
+            if (pass !== confirmPass) {
+                e.preventDefault(); // Detiene el envío
+                errorDiv.classList.remove('d-none'); // Muestra la alerta
+                document.getElementById('txtConfirmarContrasenna').focus();
+            } else {
+                errorDiv.classList.add('d-none');
+            }
+        });
+
+        // 2. Función para alternar la visibilidad de la contraseña (Ver/Ocultar)
+        function togglePasswordVisibility(inputId, iconContainer) {
+            const input = document.getElementById(inputId);
+            const icon = iconContainer.querySelector('i');
+
+            if (input.type === "password") {
+                input.type = "text";
+                icon.classList.remove('bx-hide');
+                icon.classList.add('bx-show');
+            } else {
+                input.type = "password";
+                icon.classList.remove('bx-show');
+                icon.classList.add('bx-hide');
+            }
+        }
+    </script>
+}
