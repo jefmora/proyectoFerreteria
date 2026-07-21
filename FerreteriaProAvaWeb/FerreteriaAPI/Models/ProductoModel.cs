@@ -1,10 +1,10 @@
-﻿namespace FerreteriaWeb.Models
+﻿namespace FerreteriaAPI.Models
 {
     public class ProductoModel
     {
         public int IdProducto { get; set; }
 
-        public string Nombre { get; set; } = string.Empty;
+        public string Nombre { get; set; }
 
         public decimal Precio { get; set; }
 

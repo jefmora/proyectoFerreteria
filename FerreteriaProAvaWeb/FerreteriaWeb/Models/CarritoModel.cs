@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Ferreteria.Models
+namespace FerreteriaWeb.Models
 {
     public class CarritoModel
     {

@@ -1,18 +1,12 @@
 {
   "version": 2,
-<<<<<<< Updated upstream
-  "dgSpecHash": "pVPJEXz3Unc=",
+  "dgSpecHash": "pQwK9YW1EQ0=",
   "success": true,
   "projectFilePath": "C:\\Repositorios Universidad\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\FerreteriaWeb.csproj",
-  "expectedPackageFiles": [],
-=======
-  "dgSpecHash": "Layf5SpOr0s=",
-  "success": true,
-  "projectFilePath": "C:\\Users\\deyno\\Desktop\\Todo\\Universidad-Programacion\\Programacion Avanzada Web\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\FerreteriaWeb.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\deyno\\.nuget\\packages\\bcrypt.net-next\\4.2.0\\bcrypt.net-next.4.2.0.nupkg.sha512",
-    "C:\\Users\\deyno\\.nuget\\packages\\microsoft.openapi\\3.9.0\\microsoft.openapi.3.9.0.nupkg.sha512"
+    "C:\\Users\\jefer\\.nuget\\packages\\bcrypt.net-next\\4.2.0\\bcrypt.net-next.4.2.0.nupkg.sha512",
+    "C:\\Users\\jefer\\.nuget\\packages\\microsoft.openapi\\3.9.0\\microsoft.openapi.3.9.0.nupkg.sha512",
+    "C:\\Users\\jefer\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512"
   ],
->>>>>>> Stashed changes
   "logs": []
 }
