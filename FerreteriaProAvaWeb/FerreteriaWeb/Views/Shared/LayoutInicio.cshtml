@@ -47,11 +47,50 @@
             </div>
             <div class="col-lg-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
+                    @{
+                        var autenticado = Context.Session.GetString("Autenticado");
+                        var nombre = Context.Session.GetString("Nombre");
+                    }
                     <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Mi Cuenta</button>
+                        <button type="button"
+                                class="btn btn-sm btn-light dropdown-toggle"
+                                data-toggle="dropdown">
+                            @(autenticado == "1" ? $"Hola, {nombre}" : "Mi Cuenta")
+                        </button>
+
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a asp-action="LoginBasic" asp-controller="Auth" class="dropdown-item">Iniciar Sesión</a>
-                            <a asp-action="RegisterBasic" asp-controller="Auth" class="dropdown-item">Registrarse</a>
+
+                            @if (autenticado == "1")
+                            {
+                                <a asp-controller="Usuario"
+                                   asp-action="Configuracion"
+                                   class="dropdown-item">
+                                    Mi Perfil
+                                </a>
+
+                                <div class="dropdown-divider"></div>
+
+                                <a asp-controller="Auth"
+                                   asp-action="Salir"
+                                   class="dropdown-item text-danger">
+                                    Cerrar Sesión
+                                </a>
+                            }
+                            else
+                            {
+                                <a asp-controller="Auth"
+                                   asp-action="LoginBasic"
+                                   class="dropdown-item">
+                                    Iniciar Sesión
+                                </a>
+
+                                <a asp-controller="Auth"
+                                   asp-action="RegisterBasic"
+                                   class="dropdown-item">
+                                    Registrarse
+                                </a>
+                            }
+
                         </div>
                     </div>
                     <div class="btn-group mx-2">

@@ -3,6 +3,7 @@ using FerreteriaAPI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using System.Data;
 
 namespace FerreteriaAPI.Controllers
 {
@@ -17,7 +18,7 @@ namespace FerreteriaAPI.Controllers
             using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
 
             var parameters = new DynamicParameters();
-            parameters.Add("@Consecutivo", consecutivo);
+            parameters.Add("@IdUsuario", consecutivo);
             var response = context.QueryFirstOrDefault<UsuarioResponseModel>("spConsultarUsuario", parameters);
 
             if (response != null)
@@ -36,29 +37,37 @@ namespace FerreteriaAPI.Controllers
             using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
 
             var parameters = new DynamicParameters();
-            parameters.Add("@Consecutivo", model.Consecutivo);
+            parameters.Add("@IdUsuario", model.Consecutivo);
             parameters.Add("@Contrasenna", model.Contrasenna);
-            parameters.Add("@IndicadorTemp", false);
             var response = context.Execute("spActualizarContrasenna", parameters);
 
-            if (response > 0)
+            try
             {
-                return Ok("La información se ha actualizado correctamente");
-            }
+                context.Execute(
+                    "spActualizarContrasenna",
+                    parameters,
+                    commandType: CommandType.StoredProcedure);
 
-            return BadRequest("No se ha actualizado su contraseña");
+                return Ok("Contraseña actualizada correctamente.");
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
-        [HttpPut("CambiarPerfilAPI")]
+            [HttpPut("CambiarPerfilAPI")]
         public IActionResult CambiarPerfilAPI(CambiarPerfilRequestModel model)
         {
             using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
 
             var parameters = new DynamicParameters();
-            parameters.Add("@Consecutivo", model.Consecutivo);
+            parameters.Add("@IdUsuario", model.Consecutivo);
             parameters.Add("@Identificacion", model.Identificacion);
             parameters.Add("@Nombre", model.Nombre);
             parameters.Add("@CorreoElectronico", model.CorreoElectronico);
+            parameters.Add("@Telefono", model.Telefono);
+            parameters.Add("@Direccion", model.Direccion);
             var response = context.Execute("spActualizarPerfil", parameters);
 
             if (response > 0)

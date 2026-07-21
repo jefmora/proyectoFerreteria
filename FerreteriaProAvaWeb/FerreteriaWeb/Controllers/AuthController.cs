@@ -63,8 +63,6 @@ namespace FerreteriaWeb.Controllers
         [HttpPost]
         public IActionResult RegisterBasic(UsuarioModel model)
         {
-            model.Contrasenna = BCrypt.Net.BCrypt.HashPassword(model.Contrasenna);
-
             using var client = _http.CreateClient();
             var url = _config["Valores:UrlApi"] + "Home/RegistrarAPI";
             var response = client.PostAsJsonAsync(url, model).Result;
