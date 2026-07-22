@@ -40,7 +40,7 @@
             <div class="col-lg-6 d-none d-lg-block">
                 <div class="d-inline-flex align-items-center h-100">
                     <a class="text-body mr-3" href="">Nosotros</a>
-                    <a class="text-body mr-3" href="">Contacto</a>
+                    <a class="text-body mr-3" asp-controller="Contacto" asp-action="Crear">Contacto</a>
                     <a class="text-body mr-3" href="">Servicios</a>
                     <a class="text-body mr-3" href="">Preguntas Frecuentes</a>
                 </div>
@@ -202,7 +202,7 @@
                                     <a href="checkout.html" class="dropdown-item">Cotización</a>
                                 </div>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link">Contacto</a>
+                            <a asp-controller="Contacto" asp-action="Crear" class="nav-item nav-link">Contacto</a>
                         </div>
 
                         <!--Carrito de escritorio-->
