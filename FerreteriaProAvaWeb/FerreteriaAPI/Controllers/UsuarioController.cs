@@ -1,8 +1,9 @@
-﻿using Dapper;
+using Dapper;
 using FerreteriaAPI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using System.Data;
 
 namespace FerreteriaAPI.Controllers
 {
@@ -26,6 +27,62 @@ namespace FerreteriaAPI.Controllers
             }
 
             return NotFound("No se ha encontrado el usuario");
+        }
+
+        [HttpGet("ConsultarUsuariosAPI")]
+        public IActionResult ConsultarUsuariosAPI()
+        {
+            using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
+
+            var response = context.Query<UsuarioResponseModel>(
+                "spConsultarUsuarios",
+                commandType: CommandType.StoredProcedure);
+
+            return Ok(response);
+        }
+
+        [HttpPut("CambiarEstadoUsuarioAPI")]
+        public IActionResult CambiarEstadoUsuarioAPI(int consecutivo)
+        {
+            using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@Consecutivo", consecutivo);
+            var response = context.Execute("spCambiarEstadoUsuario", parameters, commandType: CommandType.StoredProcedure);
+
+            if (response > 0)
+            {
+                return Ok("El estado del usuario ha sido actualizado correctamente.");
+            }
+
+            return BadRequest("No se pudo actualizar el estado del usuario.");
+        }
+
+        [HttpPut("CambiarRolUsuarioAPI")]
+        public IActionResult CambiarRolUsuarioAPI(CambiarRolRequestModel model)
+        {
+            using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@Consecutivo", model.Consecutivo);
+            parameters.Add("@ConsecutivoRol", model.ConsecutivoRol);
+            var response = context.Execute("spCambiarRolUsuario", parameters, commandType: CommandType.StoredProcedure);
+
+            if (response > 0)
+            {
+                return Ok("El rol del usuario ha sido actualizado correctamente.");
+            }
+
+            return BadRequest("No se pudo actualizar el rol del usuario.");
+        }
+
+        [HttpGet("ConsultarRolesAPI")]
+        public IActionResult ConsultarRolesAPI()
+        {
+            using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
+
+            var response = context.Query<dynamic>("spConsultarRoles", commandType: CommandType.StoredProcedure);
+            return Ok(response);
         }
 
         [HttpPut("CambiarContrasennaAPI")]
@@ -68,6 +125,5 @@ namespace FerreteriaAPI.Controllers
 
             return BadRequest("No se ha actualizado su perfil");
         }
-
     }
 }

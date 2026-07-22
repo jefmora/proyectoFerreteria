@@ -1,4 +1,4 @@
-﻿using FerreteriaWeb.Filter;
+using FerreteriaWeb.Filter;
 using FerreteriaWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -91,6 +91,76 @@ namespace FerreteriaWeb.Controllers
             }
 
             throw new Exception("Error al cambiar la contraseña");
+        }
+
+        #endregion
+
+        #region Módulo de Administración de Usuarios
+
+        [EsAdmin]
+        [HttpGet]
+        public IActionResult ConsultarUsuarios()
+        {
+            using var client = _http.CreateClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("Token"));
+            var url = _config["Valores:UrlApi"] + "Usuario/ConsultarUsuariosAPI";
+            var response = client.GetAsync(url).Result;
+
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                var datos = response.Content.ReadFromJsonAsync<List<UsuarioModel>>().Result;
+                return View("ConsultarUsuarios", datos ?? new List<UsuarioModel>());
+            }
+            else if (response.StatusCode == HttpStatusCode.Unauthorized)
+            {
+                return RedirectToAction("LoginBasic", "Auth");
+            }
+
+            return View("ConsultarUsuarios", new List<UsuarioModel>());
+        }
+
+        [EsAdmin]
+        [HttpPost]
+        public IActionResult CambiarEstadoUsuario(int consecutivo)
+        {
+            using var client = _http.CreateClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("Token"));
+            var url = _config["Valores:UrlApi"] + "Usuario/CambiarEstadoUsuarioAPI?consecutivo=" + consecutivo;
+            var response = client.PutAsync(url, null).Result;
+
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                TempData["MensajeExito"] = "El estado del usuario ha sido actualizado correctamente.";
+            }
+            else
+            {
+                TempData["MensajeError"] = "No se pudo cambiar el estado del usuario.";
+            }
+
+            return RedirectToAction("ConsultarUsuarios");
+        }
+
+        [EsAdmin]
+        [HttpPost]
+        public IActionResult CambiarRolUsuario(int consecutivo, int consecutivoRol)
+        {
+            using var client = _http.CreateClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("Token"));
+            var url = _config["Valores:UrlApi"] + "Usuario/CambiarRolUsuarioAPI";
+            
+            var payload = new { Consecutivo = consecutivo, ConsecutivoRol = consecutivoRol };
+            var response = client.PutAsJsonAsync(url, payload).Result;
+
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                TempData["MensajeExito"] = "El rol del usuario ha sido actualizado correctamente.";
+            }
+            else
+            {
+                TempData["MensajeError"] = "No se pudo actualizar el rol del usuario.";
+            }
+
+            return RedirectToAction("ConsultarUsuarios");
         }
 
         #endregion
