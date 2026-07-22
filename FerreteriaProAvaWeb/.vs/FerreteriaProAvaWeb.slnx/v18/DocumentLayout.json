@@ -1,9 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Repositorios Universidad\\proyectoFerreteria\\FerreteriaProAvaWeb\\",
+  "WorkspaceRootPath": "C:\\practica\\proyectoFerreteria\\FerreteriaProAvaWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\repositorios universidad\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\views\\shared\\layoutinicio.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\practica\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\practica\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\practica\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\models\\contactomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\models\\contactomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\practica\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\practica\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\models\\itemcarritomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\models\\itemcarritomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\practica\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\models\\productomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\models\\productomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\practica\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\models\\carritomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\models\\carritomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|c:\\practica\\proyectoferreteria\\ferreteriaproavaweb\\ferreteriaweb\\views\\shared\\layoutinicio.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2BDA8F26-1D82-0ED0-3F36-F64F9432930C}|FerreteriaWeb\\FerreteriaWeb.csproj|solutionrelative:ferreteriaweb\\views\\shared\\layoutinicio.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -14,8 +42,116 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 55,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\practica\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "FerreteriaWeb\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\practica\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "FerreteriaWeb\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-20T03:11:52.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CarritoController.cs",
+              "DocumentMoniker": "C:\\practica\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Controllers\\CarritoController.cs",
+              "RelativeDocumentMoniker": "FerreteriaWeb\\Controllers\\CarritoController.cs",
+              "ToolTip": "C:\\practica\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Controllers\\CarritoController.cs",
+              "RelativeToolTip": "FerreteriaWeb\\Controllers\\CarritoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-20T03:11:51.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\practica\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "FerreteriaWeb\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\practica\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "FerreteriaWeb\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-20T02:55:24.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ItemCarritoModel.cs",
+              "DocumentMoniker": "C:\\practica\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Models\\ItemCarritoModel.cs",
+              "RelativeDocumentMoniker": "FerreteriaWeb\\Models\\ItemCarritoModel.cs",
+              "ToolTip": "C:\\practica\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Models\\ItemCarritoModel.cs",
+              "RelativeToolTip": "FerreteriaWeb\\Models\\ItemCarritoModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-20T02:55:20.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CarritoModel.cs",
+              "DocumentMoniker": "C:\\practica\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Models\\CarritoModel.cs",
+              "RelativeDocumentMoniker": "FerreteriaWeb\\Models\\CarritoModel.cs",
+              "ToolTip": "C:\\practica\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Models\\CarritoModel.cs",
+              "RelativeToolTip": "FerreteriaWeb\\Models\\CarritoModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-20T02:55:17.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ContactoModel.cs",
+              "DocumentMoniker": "C:\\practica\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Models\\ContactoModel.cs",
+              "RelativeDocumentMoniker": "FerreteriaWeb\\Models\\ContactoModel.cs",
+              "ToolTip": "C:\\practica\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Models\\ContactoModel.cs",
+              "RelativeToolTip": "FerreteriaWeb\\Models\\ContactoModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-20T02:55:16.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductoModel.cs",
+              "DocumentMoniker": "C:\\practica\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Models\\ProductoModel.cs",
+              "RelativeDocumentMoniker": "FerreteriaWeb\\Models\\ProductoModel.cs",
+              "ToolTip": "C:\\practica\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Models\\ProductoModel.cs",
+              "RelativeToolTip": "FerreteriaWeb\\Models\\ProductoModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-20T02:55:05.48Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LayoutInicio.cshtml",
+              "DocumentMoniker": "C:\\practica\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Shared\\LayoutInicio.cshtml",
+              "RelativeDocumentMoniker": "FerreteriaWeb\\Views\\Shared\\LayoutInicio.cshtml",
+              "ToolTip": "C:\\practica\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Shared\\LayoutInicio.cshtml",
+              "RelativeToolTip": "FerreteriaWeb\\Views\\Shared\\LayoutInicio.cshtml",
+              "ViewState": "AgIAADAAAAAAAAAAAAAEwDgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-18T17:04:23.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -234,20 +370,15 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LayoutInicio.cshtml",
-              "DocumentMoniker": "C:\\Repositorios Universidad\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Shared\\LayoutInicio.cshtml",
-              "RelativeDocumentMoniker": "FerreteriaWeb\\Views\\Shared\\LayoutInicio.cshtml",
-              "ToolTip": "C:\\Repositorios Universidad\\proyectoFerreteria\\FerreteriaProAvaWeb\\FerreteriaWeb\\Views\\Shared\\LayoutInicio.cshtml",
-              "RelativeToolTip": "FerreteriaWeb\\Views\\Shared\\LayoutInicio.cshtml",
-              "ViewState": "AgIAADAAAAAAAAAAAAAEwDgAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-07-18T17:04:23.394Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d114938f-591c-46cf-a785-500a82d97410}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             }
           ]
         },
