@@ -1,3 +1,8 @@
+@{
+    var autenticadoInicio = Context.Session.GetString("Autenticado");
+    var nombreInicio = Context.Session.GetString("Nombre");
+    var rolInicio = Context.Session.GetInt32("ConsecutivoRol");
+}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,18 +60,24 @@
                         <button type="button"
                                 class="btn btn-sm btn-light dropdown-toggle"
                                 data-toggle="dropdown">
-                            @(autenticado == "1" ? $"Hola, {nombre}" : "Mi Cuenta")
+                            @(autenticadoInicio == "1" ? nombreInicio : "Mi Cuenta")
                         </button>
 
                         <div class="dropdown-menu dropdown-menu-right">
 
-                            @if (autenticado == "1")
+                            @if (autenticadoInicio == "1")
                             {
                                 <a asp-controller="Usuario"
                                    asp-action="Configuracion"
                                    class="dropdown-item">
                                     Mi Perfil
                                 </a>
+
+                                @if (rolInicio == 1)
+                                {
+                                    <div class="dropdown-divider"></div>
+                                    <a asp-action="Index" asp-controller="Admin" class="dropdown-item font-weight-bold text-warning"><i class="fas fa-user-shield mr-2"></i>Administración</a>
+                                }
 
                                 <div class="dropdown-divider"></div>
 

@@ -1,0 +1,109 @@
+@model FerreteriaWeb.Models.ProductoModel
+
+@{
+    ViewData["Title"] = "Registrar Producto";
+    Layout = "_Layout";
+}
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mb-1">
+                            <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Index">Administración</a></li>
+                            <li class="breadcrumb-item"><a asp-controller="Producto" asp-action="ConsultarProductosAdmin">Productos</a></li>
+                            <li class="breadcrumb-item active">Nuevo</li>
+                        </ol>
+                    </nav>
+                    <h3 class="fw-bold m-0"><i class="bi bi-plus-circle text-success me-2"></i>Registrar Nuevo Producto</h3>
+                </div>
+                <a asp-action="ConsultarProductosAdmin" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left me-1"></i> Cancelar
+                </a>
+            </div>
+
+            @if (ViewBag.MensajeError != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show shadow-sm mb-4" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill me-2"></i> @ViewBag.MensajeError
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-success text-white py-3">
+                    <h5 class="fw-bold mb-0"><i class="bi bi-box-seam me-2"></i>Datos del Producto Ferretero</h5>
+                </div>
+                <div class="card-body p-4">
+                    <form asp-action="RegistrarProducto" method="post">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label asp-for="SKU" class="form-label fw-semibold">Código SKU / Referencia <span class="text-danger">*</span></label>
+                                <input asp-for="SKU" class="form-control" placeholder="Ej. FER-1002" required />
+                                <span asp-validation-for="SKU" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                    <label asp-for="IdCategoria" class="form-label fw-semibold mb-0">Categoría <span class="text-danger">*</span></label>
+                                    <a asp-action="RegistrarCategoria" class="small text-decoration-none"><i class="bi bi-plus-circle me-1"></i>Nueva Categoría</a>
+                                </div>
+                                <select asp-for="IdCategoria" class="form-select" required>
+                                    @if (ViewBag.Categorias != null && ((IEnumerable<FerreteriaWeb.Models.CategoriaModel>)ViewBag.Categorias).Any())
+                                    {
+                                        @foreach (var cat in (IEnumerable<FerreteriaWeb.Models.CategoriaModel>)ViewBag.Categorias)
+                                        {
+                                            <option value="@cat.IdCategoria">@cat.Nombre</option>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <option value="1">General</option>
+                                    }
+                                </select>
+                            </div>
+
+                            <div class="col-12">
+                                <label asp-for="Nombre" class="form-label fw-semibold">Nombre del Producto <span class="text-danger">*</span></label>
+                                <input asp-for="Nombre" class="form-control" placeholder="Ej. Martillo de Uña 16oz Mango de Fibra" required />
+                                <span asp-validation-for="Nombre" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label asp-for="Precio" class="form-label fw-semibold">Precio Unitario (₡) <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text">₡</span>
+                                    <input asp-for="Precio" type="number" step="0.01" min="0" class="form-control" required />
+                                </div>
+                                <span asp-validation-for="Precio" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label asp-for="StockActual" class="form-label fw-semibold">Stock Actual <span class="text-danger">*</span></label>
+                                <input asp-for="StockActual" type="number" min="0" class="form-control" required />
+                                <span asp-validation-for="StockActual" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label asp-for="StockMinimo" class="form-label fw-semibold">Stock Mínimo (Alerta) <span class="text-danger">*</span></label>
+                                <input asp-for="StockMinimo" type="number" min="0" class="form-control" required />
+                                <span asp-validation-for="StockMinimo" class="text-danger small"></span>
+                            </div>
+                        </div>
+
+                        <hr class="my-4" />
+
+                        <div class="d-flex justify-content-end gap-2">
+                            <a asp-action="ConsultarProductosAdmin" class="btn btn-light border px-4">Cancelar</a>
+                            <button type="submit" class="btn btn-success px-4">
+                                <i class="bi bi-save me-1"></i> Guardar Producto
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
