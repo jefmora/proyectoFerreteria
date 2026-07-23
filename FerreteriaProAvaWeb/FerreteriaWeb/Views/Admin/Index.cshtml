@@ -74,7 +74,7 @@
     <!-- Quick Access Modules Row -->
     <div class="row g-4">
         <!-- User Management Card -->
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="card border-0 shadow-sm h-100">
                 <div class="card-body p-4">
                     <div class="d-flex align-items-center mb-3">
@@ -88,9 +88,9 @@
                     </div>
                     <hr />
                     <div class="d-flex justify-content-between align-items-center">
-                        <small class="text-muted"><i class="bi bi-info-circle me-1"></i> Control de permisos</small>
-                        <a asp-controller="Usuario" asp-action="ConsultarUsuarios" class="btn btn-primary px-3">
-                            <i class="bi bi-arrow-right-circle me-1"></i> Administrar
+                        <small class="text-muted"><i class="bi bi-info-circle me-1"></i> Control de permisos y perfiles</small>
+                        <a asp-controller="Usuario" asp-action="ConsultarUsuarios" class="btn btn-primary px-4">
+                            <i class="bi bi-arrow-right-circle me-1"></i> Administrar Usuarios
                         </a>
                     </div>
                 </div>
@@ -98,7 +98,7 @@
         </div>
 
         <!-- Product Management Card -->
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="card border-0 shadow-sm h-100">
                 <div class="card-body p-4">
                     <div class="d-flex align-items-center mb-3">
@@ -107,38 +107,14 @@
                         </div>
                         <div>
                             <h4 class="card-title fw-bold mb-1">Gestión de Productos</h4>
-                            <p class="card-text text-muted mb-0">Mantenimiento de inventario ferretero, agregar artículos, precios y stock.</p>
+                            <p class="card-text text-muted mb-0">Mantenimiento de inventario ferretero, agregar nuevos artículos, precios y stock.</p>
                         </div>
                     </div>
                     <hr />
                     <div class="d-flex justify-content-between align-items-center">
-                        <small class="text-muted"><i class="bi bi-box me-1"></i> Control de inventario</small>
-                        <a asp-controller="Producto" asp-action="ConsultarProductosAdmin" class="btn btn-success px-3">
-                            <i class="bi bi-arrow-right-circle me-1"></i> Administrar
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Category Management Card -->
-        <div class="col-md-4">
-            <div class="card border-0 shadow-sm h-100">
-                <div class="card-body p-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <div class="rounded-circle bg-info text-white p-3 me-3">
-                            <i class="bi bi-tags-fill fs-3"></i>
-                        </div>
-                        <div>
-                            <h4 class="card-title fw-bold mb-1">Gestión de Categorías</h4>
-                            <p class="card-text text-muted mb-0">Organice el catálogo creando y clasificando las categorías ferreteras.</p>
-                        </div>
-                    </div>
-                    <hr />
-                    <div class="d-flex justify-content-between align-items-center">
-                        <small class="text-muted"><i class="bi bi-tag me-1"></i> Clasificación de catálogo</small>
-                        <a asp-controller="Producto" asp-action="ConsultarCategorias" class="btn btn-info text-white px-3">
-                            <i class="bi bi-arrow-right-circle me-1"></i> Administrar
+                        <small class="text-muted"><i class="bi bi-box me-1"></i> Control de inventario e ítems</small>
+                        <a asp-controller="Producto" asp-action="ConsultarProductosAdmin" class="btn btn-success px-4">
+                            <i class="bi bi-arrow-right-circle me-1"></i> Administrar Productos
                         </a>
                     </div>
                 </div>

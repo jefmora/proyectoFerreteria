@@ -10,7 +10,7 @@ namespace FerreteriaWeb.Filter
             var autenticado = context.HttpContext.Session.GetString("Autenticado");
             var consecutivoRol = context.HttpContext.Session.GetInt32("ConsecutivoRol");
 
-            if (autenticado != "1" || consecutivoRol != 1) // 1 = Administrador
+            if (autenticado != "1" || consecutivoRol != 2) // 2 = Administrador
             {
                 context.Result = new RedirectToActionResult("Index", "Home", null);
                 return;

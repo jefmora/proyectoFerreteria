@@ -1,10 +1,9 @@
-using Dapper;
+﻿using Dapper;
 using FerreteriaAPI.Models;
 using FerreteriaAPI.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
-using System.Data;
 
 namespace FerreteriaAPI.Controllers
 {
@@ -23,9 +22,9 @@ namespace FerreteriaAPI.Controllers
             parameters.Add("@Nombre", model.Nombre);
             parameters.Add("@CorreoElectronico", model.CorreoElectronico);
             parameters.Add("@Contrasenna", model.Contrasenna);
-            var response = context.Execute("spRegistrarUsuario", parameters, commandType: CommandType.StoredProcedure);
+            var response = context.Execute("spRegistrarUsuario", parameters);
 
-            if (response > 0 || response == -1)
+            if (response > 0)
                 return Ok(response);
 
             return BadRequest("No se ha registrado su información, valide que no tenga una cuenta ya creada");
@@ -39,7 +38,7 @@ namespace FerreteriaAPI.Controllers
             var parameters = new DynamicParameters();
             parameters.Add("@CorreoElectronico", model.CorreoElectronico);
             parameters.Add("@Contrasenna", model.Contrasenna);
-            var response = context.QueryFirstOrDefault<UsuarioResponseModel>("spIniciarSesionUsuario", parameters, commandType: CommandType.StoredProcedure);
+            var response = context.QueryFirstOrDefault<UsuarioResponseModel>("spIniciarSesionUsuario", parameters);
 
             if (response != null && BCrypt.Net.BCrypt.Verify(model.Contrasenna, response.Contrasenna))
             {
@@ -57,7 +56,7 @@ namespace FerreteriaAPI.Controllers
 
             var parameters = new DynamicParameters();
             parameters.Add("@CorreoElectronico", model.CorreoElectronico);
-            var response = context.QueryFirstOrDefault<UsuarioResponseModel>("spValidarCorreo", parameters, commandType: CommandType.StoredProcedure);
+            var response = context.QueryFirstOrDefault<UsuarioResponseModel>("spValidarCorreo", parameters);
 
             if (response == null)
                 return NotFound("No se ha validado su información correctamente");
@@ -70,9 +69,9 @@ namespace FerreteriaAPI.Controllers
             parameters.Add("@Consecutivo", response.Consecutivo);
             parameters.Add("@Contrasenna", temporalCifrada);
             parameters.Add("@IndicadorTemp", true);
-            var update = context.Execute("spActualizarContrasenna", parameters, commandType: CommandType.StoredProcedure);
+            var update = context.Execute("spActualizarContrasenna", parameters);
 
-            if (update > 0 || update == -1)
+            if (update > 0)
             {
                 //3. Enviar la contraseña temporal al correo electrónico del usuario
                 string ruta = Path.Combine(AppContext.BaseDirectory, "Templates", "RecuperarAcceso.html");

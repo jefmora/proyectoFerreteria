@@ -81,8 +81,8 @@
                                         <form asp-action="CambiarRolUsuario" method="post" class="d-inline-flex align-items-center gap-1">
                                             <input type="hidden" name="consecutivo" value="@u.Consecutivo" />
                                             <select name="consecutivoRol" class="form-select form-select-sm border-secondary-subtle" onchange="this.form.submit()">
-                                                <!option value="1" @(u.ConsecutivoRol == 1 ? "selected" : "")>Administrador</!option>
-                                                <!option value="2" @(u.ConsecutivoRol == 2 ? "selected" : "")>Usuario</!option>
+                                                <!option value="1" @(u.ConsecutivoRol == 1 ? "selected" : "")>Usuario</!option>
+                                                <!option value="2" @(u.ConsecutivoRol == 2 ? "selected" : "")>Administrador</!option>
                                             </select>
                                         </form>
                                     </td>
