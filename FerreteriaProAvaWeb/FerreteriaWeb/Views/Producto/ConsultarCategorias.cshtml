@@ -1,0 +1,130 @@
+@model IEnumerable<FerreteriaWeb.Models.CategoriaModel>
+
+@{
+    ViewData["Title"] = "Gestión de Categorías";
+    Layout = "_Layout";
+}
+
+<div class="container-fluid py-4">
+    <!-- Breadcrumb & Header -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+        <div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-1">
+                    <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Index">Administración</a></li>
+                    <li class="breadcrumb-item active">Categorías</li>
+                </ol>
+            </nav>
+            <h2 class="fw-bold text-dark m-0">
+                <i class="bi bi-tags-fill text-primary me-2"></i>Gestión de Categorías de Productos
+            </h2>
+        </div>
+        <div>
+            <a asp-action="RegistrarCategoria" class="btn btn-primary px-4 py-2 fw-semibold shadow-sm">
+                <i class="bi bi-plus-circle me-1"></i> Nueva Categoría
+            </a>
+        </div>
+    </div>
+
+    <!-- Alert Messages -->
+    @if (TempData["MensajeExito"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show shadow-sm mb-4" role="alert">
+            <i class="bi bi-check-circle-fill me-2"></i> @TempData["MensajeExito"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["MensajeError"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show shadow-sm mb-4" role="alert">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i> @TempData["MensajeError"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <!-- Table Card -->
+    <div class="card border-0 shadow-sm">
+        <div class="card-header bg-dark text-white py-3 d-flex justify-content-between align-items-center">
+            <h5 class="fw-bold mb-0"><i class="bi bi-list-nested me-2"></i>Categorías Registradas</h5>
+            <span class="badge bg-warning text-dark font-monospace">@Model.Count() Categorías</span>
+        </div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th class="ps-4">ID</th>
+                            <th>Nombre de la Categoría</th>
+                            <th>Descripción</th>
+                            <th class="text-center">Estado</th>
+                            <th class="text-end pe-4">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (!Model.Any())
+                        {
+                            <tr>
+                                <td colspan="5" class="text-center py-4 text-muted">
+                                    <i class="bi bi-inbox fs-2 d-block mb-2"></i>
+                                    No hay categorías registradas en el sistema.
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+                            @foreach (var c in Model)
+                            {
+                                <tr>
+                                    <td class="ps-4 fw-bold text-secondary">#@c.IdCategoria</td>
+                                    <td>
+                                        <span class="fw-semibold text-dark fs-6">@c.Nombre</span>
+                                    </td>
+                                    <td class="text-muted">
+                                        @(string.IsNullOrEmpty(c.Descripcion) ? "Sin descripción" : c.Descripcion)
+                                    </td>
+                                    <td class="text-center">
+                                        @if (c.Estado)
+                                        {
+                                            <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-2">
+                                                <i class="bi bi-check-circle me-1"></i> Activo
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle rounded-pill px-3 py-2">
+                                                <i class="bi bi-eye-slash me-1"></i> Inactivo
+                                            </span>
+                                        }
+                                    </td>
+                                    <td class="text-end pe-4">
+                                        <div class="d-inline-flex gap-1">
+                                            <a asp-action="EditarCategoria" asp-route-idCategoria="@c.IdCategoria" class="btn btn-sm btn-outline-primary" title="Editar Categoría">
+                                                <i class="bi bi-pencil-square"></i> Editar
+                                            </a>
+                                            <form asp-action="CambiarEstadoCategoria" method="post" class="d-inline">
+                                                <input type="hidden" name="idCategoria" value="@c.IdCategoria" />
+                                                @if (c.Estado)
+                                                {
+                                                    <button type="submit" class="btn btn-sm btn-outline-warning" title="Desactivar categoría">
+                                                        <i class="bi bi-pause-circle"></i> Desactivar
+                                                    </button>
+                                                }
+                                                else
+                                                {
+                                                    <button type="submit" class="btn btn-sm btn-outline-success" title="Activar categoría">
+                                                        <i class="bi bi-play-circle"></i> Activar
+                                                    </button>
+                                                }
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
