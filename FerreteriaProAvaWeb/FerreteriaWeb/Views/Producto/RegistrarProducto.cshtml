@@ -46,13 +46,22 @@
                             </div>
 
                             <div class="col-md-6">
-                                <label asp-for="IdCategoria" class="form-label fw-semibold">Categoría <span class="text-danger">*</span></label>
+                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                    <label asp-for="IdCategoria" class="form-label fw-semibold mb-0">Categoría <span class="text-danger">*</span></label>
+                                    <a asp-action="RegistrarCategoria" class="small text-decoration-none"><i class="bi bi-plus-circle me-1"></i>Nueva Categoría</a>
+                                </div>
                                 <select asp-for="IdCategoria" class="form-select" required>
-                                    <option value="1">Herramientas Manuales</option>
-                                    <option value="2">Materiales de Construcción</option>
-                                    <option value="3">Fontanería & Tubos</option>
-                                    <option value="4">Electricidad & Iluminación</option>
-                                    <option value="5">Pinturas & Solventes</option>
+                                    @if (ViewBag.Categorias != null && ((IEnumerable<FerreteriaWeb.Models.CategoriaModel>)ViewBag.Categorias).Any())
+                                    {
+                                        @foreach (var cat in (IEnumerable<FerreteriaWeb.Models.CategoriaModel>)ViewBag.Categorias)
+                                        {
+                                            <option value="@cat.IdCategoria">@cat.Nombre</option>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <option value="1">General</option>
+                                    }
                                 </select>
                             </div>
 

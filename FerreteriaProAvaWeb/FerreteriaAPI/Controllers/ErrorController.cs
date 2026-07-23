@@ -1,8 +1,9 @@
-﻿using Dapper;
+using Dapper;
 using FerreteriaAPI.Services;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using System.Data;
 
 namespace FerreteriaAPI.Controllers
 {
@@ -24,7 +25,7 @@ namespace FerreteriaAPI.Controllers
             parameters.Add("@FechaHora", DateTime.Now);
             parameters.Add("@ConsecutivoUsuario", _utiles.ObtenerConsecutivoToken());
 
-            context.Execute("spRegistrarError", parameters);
+            context.Execute("spRegistrarError", parameters, commandType: CommandType.StoredProcedure);
             return StatusCode(500, "Se presentó un inconveniente técnico");
         }
     }
