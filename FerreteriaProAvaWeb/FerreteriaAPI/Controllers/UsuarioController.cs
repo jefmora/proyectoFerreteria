@@ -18,8 +18,8 @@ namespace FerreteriaAPI.Controllers
             using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
 
             var parameters = new DynamicParameters();
-            parameters.Add("@IdUsuario", consecutivo);
-            var response = context.QueryFirstOrDefault<UsuarioResponseModel>("spConsultarUsuario", parameters);
+            parameters.Add("@Consecutivo", consecutivo);
+            var response = context.QueryFirstOrDefault<UsuarioResponseModel>("spConsultarUsuario", parameters, commandType: CommandType.StoredProcedure);
 
             if (response != null)
             {
@@ -37,9 +37,8 @@ namespace FerreteriaAPI.Controllers
             using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
 
             var parameters = new DynamicParameters();
-            parameters.Add("@IdUsuario", model.Consecutivo);
+            parameters.Add("@Consecutivo", model.Consecutivo);
             parameters.Add("@Contrasenna", model.Contrasenna);
-            var response = context.Execute("spActualizarContrasenna", parameters);
 
             try
             {
@@ -62,13 +61,13 @@ namespace FerreteriaAPI.Controllers
             using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
 
             var parameters = new DynamicParameters();
-            parameters.Add("@IdUsuario", model.Consecutivo);
+            parameters.Add("@Consecutivo", model.Consecutivo);
             parameters.Add("@Identificacion", model.Identificacion);
             parameters.Add("@Nombre", model.Nombre);
             parameters.Add("@CorreoElectronico", model.CorreoElectronico);
             parameters.Add("@Telefono", model.Telefono);
             parameters.Add("@Direccion", model.Direccion);
-            var response = context.Execute("spActualizarPerfil", parameters);
+            var response = context.Execute("spActualizarPerfil", parameters, commandType: CommandType.StoredProcedure);
 
             if (response > 0)
             {
