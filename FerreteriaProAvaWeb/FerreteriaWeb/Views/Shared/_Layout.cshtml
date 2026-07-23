@@ -38,7 +38,7 @@
                             <a class="nav-link" asp-area="" asp-controller="Producto" asp-action="Index"><i class="bi bi-box-seam me-1"></i> Catálogo</a>
                         </li>
 
-                        @if (autenticado == "1" && consecutivoRol == 2)
+                        @if (autenticado == "1" && consecutivoRol == 1)
                         {
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-warning fw-bold" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -59,6 +59,11 @@
                                     <li>
                                         <a class="dropdown-item" asp-controller="Producto" asp-action="ConsultarProductosAdmin">
                                             <i class="bi bi-tools me-2 text-success"></i> Gestión de Productos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" asp-controller="Producto" asp-action="ConsultarCategorias">
+                                            <i class="bi bi-tags-fill me-2 text-warning"></i> Gestión de Categorías
                                         </a>
                                     </li>
                                 </ul>

@@ -79,7 +79,7 @@ namespace FerreteriaAPI.Controllers
 
             var response = context.Execute("spRegistrarProducto", parameters, commandType: CommandType.StoredProcedure);
 
-            if (response > 0)
+            if (response > 0 || response == -1)
                 return Ok("Producto registrado correctamente");
 
             return BadRequest("Error al registrar el producto");
@@ -102,7 +102,7 @@ namespace FerreteriaAPI.Controllers
 
             var response = context.Execute("spActualizarProducto", parameters, commandType: CommandType.StoredProcedure);
 
-            if (response > 0)
+            if (response > 0 || response == -1)
                 return Ok("Producto actualizado correctamente");
 
             return BadRequest("Error al actualizar el producto");
@@ -119,7 +119,7 @@ namespace FerreteriaAPI.Controllers
 
             var response = context.Execute("spCambiarEstadoProducto", parameters, commandType: CommandType.StoredProcedure);
 
-            if (response > 0)
+            if (response > 0 || response == -1)
                 return Ok("Estado del producto cambiado correctamente");
 
             return BadRequest("Error al cambiar el estado del producto");
@@ -130,8 +130,26 @@ namespace FerreteriaAPI.Controllers
         {
             using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
 
-            var response = context.Query<dynamic>("spConsultarCategorias", commandType: CommandType.StoredProcedure);
+            var response = context.Query<CategoriaModel>("spConsultarCategorias", commandType: CommandType.StoredProcedure);
             return Ok(response);
+        }
+
+        [Authorize]
+        [HttpPost("RegistrarCategoriaAPI")]
+        public IActionResult RegistrarCategoriaAPI(CategoriaModel model)
+        {
+            using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@Nombre", model.Nombre);
+            parameters.Add("@Descripcion", model.Descripcion);
+
+            var response = context.Execute("spRegistrarCategoria", parameters, commandType: CommandType.StoredProcedure);
+
+            if (response > 0 || response == -1)
+                return Ok("Categoría registrada correctamente");
+
+            return BadRequest("Error al registrar la categoría");
         }
     }
 }
