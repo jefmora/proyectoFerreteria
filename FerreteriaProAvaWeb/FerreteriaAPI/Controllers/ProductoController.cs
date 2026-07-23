@@ -151,5 +151,61 @@ namespace FerreteriaAPI.Controllers
 
             return BadRequest("Error al registrar la categoría");
         }
+
+        [Authorize]
+        [HttpGet("ConsultarCategoriaPorIdAPI")]
+        public IActionResult ConsultarCategoriaPorIdAPI(int idCategoria)
+        {
+            using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@IdCategoria", idCategoria);
+
+            var response = context.QueryFirstOrDefault<CategoriaModel>(
+                "spConsultarCategoriaPorId",
+                parameters,
+                commandType: CommandType.StoredProcedure);
+
+            if (response != null)
+                return Ok(response);
+
+            return NotFound("Categoría no encontrada");
+        }
+
+        [Authorize]
+        [HttpPut("ActualizarCategoriaAPI")]
+        public IActionResult ActualizarCategoriaAPI(CategoriaModel model)
+        {
+            using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@IdCategoria", model.IdCategoria);
+            parameters.Add("@Nombre", model.Nombre);
+            parameters.Add("@Descripcion", model.Descripcion);
+
+            var response = context.Execute("spActualizarCategoria", parameters, commandType: CommandType.StoredProcedure);
+
+            if (response > 0 || response == -1)
+                return Ok("Categoría actualizada correctamente");
+
+            return BadRequest("Error al actualizar la categoría");
+        }
+
+        [Authorize]
+        [HttpPut("CambiarEstadoCategoriaAPI")]
+        public IActionResult CambiarEstadoCategoriaAPI(int idCategoria)
+        {
+            using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@IdCategoria", idCategoria);
+
+            var response = context.Execute("spCambiarEstadoCategoria", parameters, commandType: CommandType.StoredProcedure);
+
+            if (response > 0 || response == -1)
+                return Ok("Estado de la categoría cambiado correctamente");
+
+            return BadRequest("Error al cambiar el estado de la categoría");
+        }
     }
 }

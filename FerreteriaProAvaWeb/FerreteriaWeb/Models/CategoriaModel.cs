@@ -12,5 +12,7 @@ namespace FerreteriaWeb.Models
 
         [StringLength(250, ErrorMessage = "La descripción no puede exceder los 250 caracteres.")]
         public string? Descripcion { get; set; }
+
+        public bool Estado { get; set; } = true;
     }
 }

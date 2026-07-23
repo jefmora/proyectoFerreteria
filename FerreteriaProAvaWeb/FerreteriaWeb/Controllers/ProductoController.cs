@@ -213,6 +213,75 @@ namespace FerreteriaWeb.Controllers
             return View(model);
         }
 
+        [SesionActiva]
+        [EsAdmin]
+        [HttpGet]
+        public async Task<IActionResult> EditarCategoria(int idCategoria)
+        {
+            var token = HttpContext.Session.GetString("Token");
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            string url = _config["Valores:UrlApi"] + "Producto/ConsultarCategoriaPorIdAPI?idCategoria=" + idCategoria;
+            var response = await _httpClient.GetAsync(url);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                TempData["MensajeError"] = "No se pudo cargar la información de la categoría.";
+                return RedirectToAction("ConsultarCategorias");
+            }
+
+            var json = await response.Content.ReadAsStringAsync();
+            var categoria = JsonConvert.DeserializeObject<CategoriaModel>(json);
+            return View(categoria);
+        }
+
+        [SesionActiva]
+        [EsAdmin]
+        [HttpPost]
+        public async Task<IActionResult> EditarCategoria(CategoriaModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var token = HttpContext.Session.GetString("Token");
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            string url = _config["Valores:UrlApi"] + "Producto/ActualizarCategoriaAPI";
+            var response = await _httpClient.PutAsJsonAsync(url, model);
+
+            if (response.IsSuccessStatusCode)
+            {
+                TempData["MensajeExito"] = "Categoría actualizada correctamente.";
+                return RedirectToAction("ConsultarCategorias");
+            }
+
+            ViewBag.MensajeError = await response.Content.ReadAsStringAsync();
+            return View(model);
+        }
+
+        [SesionActiva]
+        [EsAdmin]
+        [HttpPost]
+        public async Task<IActionResult> CambiarEstadoCategoria(int idCategoria)
+        {
+            var token = HttpContext.Session.GetString("Token");
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            string url = _config["Valores:UrlApi"] + "Producto/CambiarEstadoCategoriaAPI?idCategoria=" + idCategoria;
+            var response = await _httpClient.PutAsync(url, null);
+
+            if (response.IsSuccessStatusCode)
+            {
+                TempData["MensajeExito"] = "El estado de la categoría ha sido cambiado correctamente.";
+            }
+            else
+            {
+                TempData["MensajeError"] = "No se pudo cambiar el estado de la categoría.";
+            }
+
+            return RedirectToAction("ConsultarCategorias");
+        }
+
         #endregion
 
         #region Métodos Privados Auxiliares
