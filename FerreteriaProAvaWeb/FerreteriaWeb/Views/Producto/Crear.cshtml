@@ -1,0 +1,64 @@
+﻿@model FerreteriaWeb.Models.ProductoModel
+
+@{
+    ViewData["Title"] = "Nuevo Producto";
+}
+
+<h2>Nuevo Producto</h2>
+
+<form asp-action="Crear" method="post">
+
+    <div class="mb-3">
+        <label>SKU</label>
+        <input asp-for="SKU" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Nombre</label>
+        <input asp-for="Nombre" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Precio</label>
+        <input asp-for="Precio" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Stock Actual</label>
+        <input asp-for="StockActual" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Stock Mínimo</label>
+        <input asp-for="StockMinimo" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Estado</label>
+        <select asp-for="Estado" class="form-select">
+            <option value="true">Activo</option>
+            <option value="false">Inactivo</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Categoría</label>
+
+        <select asp-for="IdCategoria"
+                asp-items="ViewBag.Categorias"
+                class="form-select">
+
+            <option value="">Seleccione una categoría</option>
+
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">
+        Guardar
+    </button>
+
+    <a asp-action="Index" class="btn btn-secondary">
+        Cancelar
+    </a>
+
+</form>

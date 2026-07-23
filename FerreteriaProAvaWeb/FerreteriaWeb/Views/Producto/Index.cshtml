@@ -4,38 +4,83 @@
     ViewData["Title"] = "Productos";
 }
 
-<div class="container mt-4">
+<h2>Productos</h2>
 
-    <div class="row">
+<p>
+    <a asp-controller="Producto" asp-action="Crear" class="btn btn-primary">
+        Nuevo Producto
+    </a>
+</p>
 
-        @foreach (var item in Model)
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>SKU</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Stock Mínimo</th>
+            <th>Estado</th>
+            <th>Categoría</th>
+            <th width="180">Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @if (Model != null && Model.Any())
         {
-            <div class="col-md-4 mb-3">
+            foreach (var item in Model)
+            {
+                <tr>
 
-                <div class="card">
+                    <td>@item.SKU</td>
 
-                    <div class="card-body">
+                    <td>@item.Nombre</td>
 
-                        <h5>@item.Nombre</h5>
+                    <td>@item.Precio.ToString("C")</td>
 
-                        <h4>₡ @item.Precio.ToString("N2")</h4>
+                    <td>@item.StockActual</td>
 
-                        <p>Stock: @item.StockActual</p>
+                    <td>@item.StockMinimo</td>
 
-                        <a asp-controller="Carrito"
-                           asp-action="Agregar"
-                           asp-route-idProducto="@item.IdProducto"
-                           class="btn btn-primary w-100">
-                            Agregar al carrito
+                    <td>
+                        @(item.Estado ? "Activo" : "Inactivo")
+                    </td>
+
+                    <td>@item.IdCategoria</td>
+
+                    <td>
+
+                        <a asp-action="Editar"
+                           asp-route-id="@item.IdProducto"
+                           class="btn btn-warning btn-sm">
+
+                            Editar
+
                         </a>
 
-                    </div>
+                        <a asp-action="Eliminar"
+                           asp-route-id="@item.IdProducto"
+                           class="btn btn-danger btn-sm"
+                           onclick="return confirm('¿Está seguro de eliminar este producto?');">
+                            Eliminar
+                        </a>
 
-                </div>
+                    </td>
 
-            </div>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="8" class="text-center">
+                    No existen productos registrados.
+                </td>
+            </tr>
         }
 
-    </div>
+    </tbody>
 
-</div>
+</table>
