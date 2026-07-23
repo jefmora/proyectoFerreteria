@@ -13,5 +13,6 @@ namespace FerreteriaWeb.Models
         public bool Estado { get; set; } = true;
         public int IdCategoria { get; set; } = 1;
         public string NombreCategoria { get; set; } = string.Empty;
+        public string? Categoria { get; set; }
     }
 }

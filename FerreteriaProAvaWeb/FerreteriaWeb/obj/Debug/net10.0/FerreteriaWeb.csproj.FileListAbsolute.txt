@@ -35,7 +35,6 @@ C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb
 C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\cl2eta0uj5-{0}-xmya1ckinp-xmya1ckinp.gz
 C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\hpn32h7k55-{0}-j4hf2oqn77-j4hf2oqn77.gz
 C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\4t02tm4ehd-{0}-b9sayid5wm-b9sayid5wm.gz
-C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\ei7y3bwry9-{0}-au4pi8zv1g-au4pi8zv1g.gz
 C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\f0ul8lnhap-{0}-c6gbnysyx0-c6gbnysyx0.gz
 C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\ppdmucp80m-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\m416ldgog8-{0}-q9cr5me4d7-q9cr5me4d7.gz
@@ -253,3 +252,4 @@ C:\practica\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10
 C:\practica\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\FerreteriaWeb.pdb
 C:\practica\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\FerreteriaWeb.genruntimeconfig.cache
 C:\practica\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\ref\FerreteriaWeb.dll
+C:\Repositorios Universidad\proyectoFerreteria\FerreteriaProAvaWeb\FerreteriaWeb\obj\Debug\net10.0\compressed\ei7y3bwry9-{0}-au4pi8zv1g-au4pi8zv1g.gz
