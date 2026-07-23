@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FerreteriaAPI.Controllers
+namespace FerreteriaAPI.Models
 {
     public class InicioSesionUsuarioRequestModel
     {

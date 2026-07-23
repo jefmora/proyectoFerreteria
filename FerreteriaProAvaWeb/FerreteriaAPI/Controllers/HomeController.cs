@@ -1,4 +1,4 @@
-using Dapper;
+﻿using Dapper;
 using FerreteriaAPI.Models;
 using FerreteriaAPI.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -16,6 +16,9 @@ namespace FerreteriaAPI.Controllers
         [HttpPost("RegistrarAPI")]
         public IActionResult RegistrarAPI(RegistroUsuarioRequestModel model)
         {
+            // La contraseña se cifra aquí (no en el proyecto Web)
+            model.Contrasenna = BCrypt.Net.BCrypt.HashPassword(model.Contrasenna);
+
             using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
 
             var parameters = new DynamicParameters();
@@ -23,12 +26,20 @@ namespace FerreteriaAPI.Controllers
             parameters.Add("@Nombre", model.Nombre);
             parameters.Add("@CorreoElectronico", model.CorreoElectronico);
             parameters.Add("@Contrasenna", model.Contrasenna);
-            var response = context.Execute("spRegistrarUsuario", parameters, commandType: CommandType.StoredProcedure);
 
-            if (response > 0 || response == -1)
-                return Ok(response);
+            try
+            {
+                context.Execute(
+                    "spRegistrarUsuario",
+                    parameters,
+                    commandType: CommandType.StoredProcedure);
 
-            return BadRequest("No se ha registrado su información, valide que no tenga una cuenta ya creada");
+                return Ok("Usuario registrado correctamente.");
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost("IniciarSesionAPI")]
@@ -39,15 +50,20 @@ namespace FerreteriaAPI.Controllers
             var parameters = new DynamicParameters();
             parameters.Add("@CorreoElectronico", model.CorreoElectronico);
             parameters.Add("@Contrasenna", model.Contrasenna);
-            var response = context.QueryFirstOrDefault<UsuarioResponseModel>("spIniciarSesionUsuario", parameters, commandType: CommandType.StoredProcedure);
 
-            if (response != null && BCrypt.Net.BCrypt.Verify(model.Contrasenna, response.Contrasenna))
+            var response = context.QueryFirstOrDefault<UsuarioResponseModel>(
+                "spIniciarSesionUsuario",
+                parameters,
+                commandType: CommandType.StoredProcedure);
+
+            if (response != null &&
+                BCrypt.Net.BCrypt.Verify(model.Contrasenna, response.Contrasenna))
             {
                 response.Token = _utiles.GenerarToken(response.Consecutivo);
                 return Ok(response);
             }
-            else
-                return NotFound("No se ha validado su información correctamente");
+
+            return NotFound("No se ha validado su información correctamente.");
         }
 
         [HttpPost("RecuperarAccesoAPI")]
@@ -57,35 +73,45 @@ namespace FerreteriaAPI.Controllers
 
             var parameters = new DynamicParameters();
             parameters.Add("@CorreoElectronico", model.CorreoElectronico);
-            var response = context.QueryFirstOrDefault<UsuarioResponseModel>("spValidarCorreo", parameters, commandType: CommandType.StoredProcedure);
+
+            var response = context.QueryFirstOrDefault<UsuarioResponseModel>(
+                "spValidarCorreo",
+                parameters,
+                commandType: CommandType.StoredProcedure);
 
             if (response == null)
-                return NotFound("No se ha validado su información correctamente");
+                return NotFound("No se ha validado su información correctamente.");
 
-            //2. Generar una contraseña temporal
+            // Generar contraseña temporal
             var temporal = _utiles.GenerarContrasena();
             var temporalCifrada = BCrypt.Net.BCrypt.HashPassword(temporal);
 
             parameters = new DynamicParameters();
-            parameters.Add("@Consecutivo", response.Consecutivo);
+            parameters.Add("@IdUsuario", response.Consecutivo);
             parameters.Add("@Contrasenna", temporalCifrada);
-            parameters.Add("@IndicadorTemp", true);
-            var update = context.Execute("spActualizarContrasenna", parameters, commandType: CommandType.StoredProcedure);
 
-            if (update > 0 || update == -1)
+            var update = context.Execute(
+                "spActualizarContrasenna",
+                parameters,
+                commandType: CommandType.StoredProcedure);
+
+            if (update > 0)
             {
-                //3. Enviar la contraseña temporal al correo electrónico del usuario
                 string ruta = Path.Combine(AppContext.BaseDirectory, "Templates", "RecuperarAcceso.html");
                 string plantilla = System.IO.File.ReadAllText(ruta);
 
                 plantilla = plantilla.Replace("{{TEMPORAL}}", temporal);
                 plantilla = plantilla.Replace("{{NOMBRE}}", response.Nombre);
 
-                await _utiles.EnviarCorreoAsync(model.CorreoElectronico, "Recuperación de acceso", plantilla);
+                await _utiles.EnviarCorreoAsync(
+                    model.CorreoElectronico,
+                    "Recuperación de acceso",
+                    plantilla);
+
                 return Ok(response);
             }
 
-            return BadRequest("No se ha recuperado su acceso, intente nuevamente más tarde");
+            return BadRequest("No se ha recuperado su acceso, intente nuevamente más tarde.");
         }
     }
 }

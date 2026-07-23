@@ -1,0 +1,55 @@
+@model FerreteriaWeb.Models.DetalleContactoViewModel
+@{
+    ViewData["Title"] = "Detalle de soporte";
+    var contacto = Model.Contacto;
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div><h1 class="h3 mb-1">@contacto.Asunto</h1><p class="text-muted mb-0">Solicitud #@contacto.IdContacto</p></div>
+    <a asp-action="Index" class="btn btn-outline-secondary">Volver al listado</a>
+</div>
+
+@if (TempData["MensajeExito"] is string exito) { <div class="alert alert-success">@exito</div> }
+@if (TempData["MensajeError"] is string error) { <div class="alert alert-danger">@error</div> }
+
+<div class="row g-4">
+    <div class="col-lg-7">
+        <div class="card shadow-sm mb-4"><div class="card-body">
+            <div class="d-flex justify-content-between mb-3"><strong>@contacto.Nombre</strong><span class="badge text-bg-secondary">@contacto.Estado</span></div>
+            <p class="mb-1"><a href="mailto:@contacto.Correo">@contacto.Correo</a>@(string.IsNullOrWhiteSpace(contacto.Telefono) ? "" : " · " + contacto.Telefono)</p>
+            <small class="text-muted">@contacto.FechaCreacion.ToString("dd/MM/yyyy HH:mm")</small><hr />
+            <p class="mb-0" style="white-space: pre-line">@contacto.Mensaje</p>
+        </div></div>
+
+        <h2 class="h5">Historial de respuestas</h2>
+        @if (!Model.Respuestas.Any()) { <p class="text-muted">Aún no hay respuestas.</p> }
+        @foreach (var respuesta in Model.Respuestas)
+        {
+            <div class="card mb-3"><div class="card-body"><div class="d-flex justify-content-between"><strong>@respuesta.RespondidoPor</strong><small class="text-muted">@respuesta.FechaRespuesta.ToString("dd/MM/yyyy HH:mm")</small></div><p class="mb-0 mt-2" style="white-space: pre-line">@respuesta.Respuesta</p></div></div>
+        }
+    </div>
+    <div class="col-lg-5">
+        <div class="card shadow-sm mb-4"><div class="card-body">
+            <h2 class="h5">Responder</h2>
+            <form asp-action="Responder" method="post">
+                <input type="hidden" name="IdContacto" value="@contacto.IdContacto" />
+                <textarea name="Respuesta" class="form-control mb-3" rows="5" placeholder="Escriba la respuesta para el cliente"></textarea>
+                <button class="btn btn-primary w-100">Registrar respuesta</button>
+            </form>
+        </div></div>
+        <div class="card shadow-sm"><div class="card-body">
+            <h2 class="h5">Estado</h2>
+            <form asp-action="CambiarEstado" method="post" class="d-flex gap-2 mb-3">
+                <input type="hidden" name="IdContacto" value="@contacto.IdContacto" />
+                <select name="Estado" class="form-select">
+                    @foreach (var estado in new[] { "Pendiente", "En proceso", "Respondido", "Cerrado" })
+                    { <option value="@estado" selected="@(contacto.Estado == estado)">@estado</option> }
+                </select>
+                <button class="btn btn-outline-primary">Guardar</button>
+            </form>
+            <form asp-action="Eliminar" asp-route-id="@contacto.IdContacto" method="post" onsubmit="return confirm('¿Desea eliminar esta solicitud y sus respuestas?');">
+                <button class="btn btn-outline-danger w-100">Eliminar solicitud</button>
+            </form>
+        </div></div>
+    </div>
+</div>

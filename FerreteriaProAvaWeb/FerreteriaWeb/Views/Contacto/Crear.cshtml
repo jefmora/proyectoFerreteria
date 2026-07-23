@@ -1,0 +1,66 @@
+@model FerreteriaWeb.Models.ContactoModel
+@{
+    ViewData["Title"] = "Contacto";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h1 class="h3 mb-1">Contacto y soporte</h1>
+                <p class="text-muted mb-0">Cuéntenos cómo podemos ayudarle.</p>
+            </div>
+            @if (Context.Session.GetString("Autenticado") == "1")
+            {
+                <a asp-action="Index" class="btn btn-outline-secondary">Gestionar solicitudes</a>
+            }
+        </div>
+
+        @if (TempData["MensajeExito"] is string mensaje)
+        {
+            <div class="alert alert-success" role="alert">@mensaje</div>
+        }
+
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <form asp-action="Crear" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label asp-for="Nombre" class="form-label"></label>
+                            <input asp-for="Nombre" class="form-control" autocomplete="name" />
+                            <span asp-validation-for="Nombre" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Correo" class="form-label"></label>
+                            <input asp-for="Correo" class="form-control" autocomplete="email" />
+                            <span asp-validation-for="Correo" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Telefono" class="form-label"></label>
+                            <input asp-for="Telefono" class="form-control" autocomplete="tel" />
+                            <span asp-validation-for="Telefono" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Asunto" class="form-label"></label>
+                            <input asp-for="Asunto" class="form-control" />
+                            <span asp-validation-for="Asunto" class="text-danger"></span>
+                        </div>
+                        <div class="col-12">
+                            <label asp-for="Mensaje" class="form-label"></label>
+                            <textarea asp-for="Mensaje" class="form-control" rows="6"></textarea>
+                            <span asp-validation-for="Mensaje" class="text-danger"></span>
+                        </div>
+                        <div class="col-12 text-end">
+                            <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,47 @@
+@model List<FerreteriaWeb.Models.ContactoModel>
+@{
+    ViewData["Title"] = "Soporte";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h1 class="h3 mb-1">Solicitudes de soporte</h1>
+        <p class="text-muted mb-0">Administre los mensajes recibidos.</p>
+    </div>
+    <a asp-action="Crear" class="btn btn-primary">Nuevo mensaje</a>
+</div>
+
+@if (TempData["MensajeExito"] is string exito)
+{
+    <div class="alert alert-success">@exito</div>
+}
+@if (TempData["MensajeError"] is string error)
+{
+    <div class="alert alert-danger">@error</div>
+}
+
+<div class="card shadow-sm">
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+                <tr><th>Fecha</th><th>Cliente</th><th>Asunto</th><th>Estado</th><th class="text-end">Acciones</th></tr>
+            </thead>
+            <tbody>
+            @if (!Model.Any())
+            {
+                <tr><td colspan="5" class="text-center text-muted py-4">No hay solicitudes registradas.</td></tr>
+            }
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.FechaCreacion.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td><strong>@item.Nombre</strong><br /><small class="text-muted">@item.Correo</small></td>
+                    <td>@item.Asunto</td>
+                    <td><span class="badge @(item.Estado == "Respondido" ? "text-bg-success" : "text-bg-warning")">@item.Estado</span></td>
+                    <td class="text-end"><a asp-action="Detalle" asp-route-id="@item.IdContacto" class="btn btn-sm btn-outline-primary">Ver y responder</a></td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

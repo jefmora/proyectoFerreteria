@@ -37,6 +37,15 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Producto" asp-action="Index"><i class="bi bi-box-seam me-1"></i> Catálogo</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Contacto" asp-action="Crear">Contacto</a>
+                        </li>
+                        @if (Context.Session.GetString("Autenticado") == "1")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Contacto" asp-action="Index">Soporte</a>
+                            </li>
+                        }
 
                         @if (autenticado == "1" && consecutivoRol == 1)
                         {

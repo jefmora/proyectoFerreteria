@@ -13,5 +13,7 @@
         public string Token { get; set; } = string.Empty;
         public int ConsecutivoRol { get; set; }
         public string NombreRol { get; set; } = string.Empty;
+        public string? Telefono { get; set; }
+        public string? Direccion { get; set; }
     }
 }
