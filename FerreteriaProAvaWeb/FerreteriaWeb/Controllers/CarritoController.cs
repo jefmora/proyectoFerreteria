@@ -26,8 +26,10 @@ namespace FerreteriaWeb.Controllers
             return View(carrito);
         }
 
-        public async Task<IActionResult> Agregar(int id)
+        public async Task<IActionResult> Agregar(int id, int cantidad)
         {
+            if (cantidad < 1)
+                cantidad = 1;
             string url = _config["Valores:UrlApi"] + "Producto/ConsultarProductos";
 
             var response = await _httpClient.GetAsync(url);
@@ -50,20 +52,18 @@ namespace FerreteriaWeb.Controllers
 
             if (item != null)
             {
-                item.Cantidad++;
+                item.Cantidad += cantidad;
             }
             else
             {
                 carrito.Items.Add(new ItemCarritoModel
                 {
                     Producto = producto,
-                    Cantidad = 1
+                    Cantidad = cantidad
                 });
             }
 
             HttpContext.Session.SetObject("Carrito", carrito);
-
-            return RedirectToAction("Index", "Home");
 
             return RedirectToAction("Index", "Home");
         }

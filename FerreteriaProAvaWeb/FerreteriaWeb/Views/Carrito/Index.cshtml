@@ -26,9 +26,9 @@
 }
 else
 {
-    <table class="table table-bordered">
+        <table class="table table-hover align-middle shadow">
 
-            <thead class="table-dark text-center">
+            <thead style="background:#FFD333;color:#2B2E4A;" class="text-center">
                 <tr>
                     <th>Producto</th>
                     <th>Precio</th>
@@ -45,7 +45,27 @@ else
                 <tr>
 
                         <td class="align-middle">
-                            <strong>@item.Producto.Nombre</strong>
+
+                            <div class="d-flex align-items-center">
+
+                                <img src="~/img/productos destacados/@item.Producto.Imagen"
+                                     class="rounded border me-3"
+                                     style="width:80px;height:80px;object-fit:contain;background:white;" />
+
+                                <div>
+
+                                    <h6 class="mb-1 fw-bold">
+                                        @item.Producto.Nombre
+                                    </h6>
+
+                                    <small class="text-muted">
+                                        @item.Producto.Categoria
+                                    </small>
+
+                                </div>
+
+                            </div>
+
                         </td>
 
                         <td class="text-center">
@@ -61,23 +81,32 @@ else
                         </td>
 
                         <td class="text-center">
-                        <a asp-action="Disminuir"
-                           asp-route-id="@item.Producto.IdProducto"
-                           class="btn btn-warning btn-sm">
-                            -
-                        </a>
+                            <a asp-action="Disminuir"
+                               asp-route-id="@item.Producto.IdProducto"
+                               class="btn btn-outline-warning btn-sm">
 
-                        <a asp-action="Aumentar"
-                           asp-route-id="@item.Producto.IdProducto"
-                           class="btn btn-success btn-sm">
-                            +
-                        </a>
+                                <i class="fa fa-minus"></i>
+                                 - 
 
-                        <a asp-action="Eliminar"
-                           asp-route-id="@item.Producto.IdProducto"
-                           class="btn btn-danger btn-sm">
-                            Eliminar
-                        </a>
+                            </a>
+
+                            <a asp-action="Aumentar"
+                               asp-route-id="@item.Producto.IdProducto"
+                               class="btn btn-warning btn-sm">
+
+                                <i class="fa fa-plus"></i>
+                                 + 
+
+                            </a>
+
+                            <a asp-action="Eliminar"
+                               asp-route-id="@item.Producto.IdProducto"
+                               class="btn btn-outline-danger btn-sm">
+
+                                <i class="fa fa-trash"></i>
+                                Eliminar
+
+                            </a>
 
                     </td>
 
@@ -88,23 +117,75 @@ else
 
     </table>
 
-    <div class="text-right">
+        <div class="card shadow border-0 mt-4">
 
-        <h5>Subtotal: ₡ @Model.Subtotal.ToString("N2")</h5>
+            <div class="card-header bg-warning">
 
-        <h5>IVA: ₡ @Model.IVA.ToString("N2")</h5>
+                <h5 class="mb-0 fw-bold">
+                    Resumen del pedido
+                </h5>
 
-        <h4>Total: ₡ @Model.Total.ToString("N2")</h4>
+            </div>
 
-    </div>
-    <a asp-action="Vaciar"
-       class="btn btn-danger"
-       onclick="return confirm('¿Desea vaciar el carrito?');">
-        Vaciar carrito
-    </a>
-    <a class="btn btn-success ms-2">
-        Finalizar compra
-    </a>
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Subtotal</span>
+                    <strong>₡ @Model.Subtotal.ToString("N2")</strong>
+                </div>
+
+                <div class="d-flex justify-content-between mb-2">
+                    <span>IVA</span>
+                    <strong>₡ @Model.IVA.ToString("N2")</strong>
+                </div>
+
+                <hr>
+
+                <div class="d-flex justify-content-between">
+
+                    <h4>Total</h4>
+
+                    <h4 class="text-warning">
+                        ₡ @Model.Total.ToString("N2")
+                    </h4>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="mt-4 d-flex justify-content-between">
+
+            <a asp-controller="Home"
+               asp-action="Index"
+               class="btn btn-dark btn-lg">
+
+                <i class="fa fa-arrow-left"></i>
+                Seguir comprando
+
+            </a>
+
+            <div>
+
+                <a asp-action="Vaciar"
+                   class="btn btn-outline-danger btn-lg"
+                   onclick="return confirm('¿Desea vaciar el carrito?');">
+
+                    <i class="fa fa-trash"></i>
+                    Vaciar
+
+                </a>
+
+                <a class="btn btn-warning btn-lg ms-2">
+
+                    <i class="fa fa-credit-card"></i>
+                    Finalizar compra
+
+                </a>
+
+            </div>
+
+        </div>
 
     }
 </div>

@@ -28,5 +28,33 @@ namespace FerreteriaAPI.Controllers
 
             return Ok(response);
         }
+        [HttpGet("ConsultarProductosDestacados")]
+        public IActionResult ConsultarProductosDestacados()
+        {
+            using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
+
+            var response = context.Query<ProductoModel>(
+                "spConsultarProductosDestacados",
+                commandType: CommandType.StoredProcedure);
+
+            return Ok(response);
+        }
+
+        [HttpGet("ConsultarProducto")]
+        public IActionResult ConsultarProducto(int idProducto)
+        {
+            using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
+
+            var response = context.QueryFirstOrDefault<ProductoModel>(
+                "spConsultarProducto",
+                new { IdProducto = idProducto },
+                commandType: CommandType.StoredProcedure);
+
+            if (response == null)
+                return NotFound();
+
+            return Ok(response);
+        }
+
     }
 }

@@ -17,7 +17,7 @@ namespace FerreteriaWeb.Controllers
 
         public async Task<IActionResult> Index()
         {
-            string url = _config["Valores:UrlApi"] + "Producto/ConsultarProductos";
+            string url = _config["Valores:UrlApi"] + "Producto/ConsultarProductosDestacados";
 
             var response = await _httpClient.GetAsync(url);
 

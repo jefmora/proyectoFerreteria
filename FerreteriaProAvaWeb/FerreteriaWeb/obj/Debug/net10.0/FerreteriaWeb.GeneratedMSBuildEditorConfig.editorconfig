@@ -63,6 +63,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyY2lhbGVzXF9NYWNyb3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Repositorios Universidad/proyectoFerreteria/FerreteriaProAvaWeb/FerreteriaWeb/Views/Producto/Detalle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cRGV0YWxsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Repositorios Universidad/proyectoFerreteria/FerreteriaProAvaWeb/FerreteriaWeb/Views/Producto/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

@@ -37,20 +37,26 @@
     <!-- Topbar Start -->
     <div class="container-fluid">
         <div class="row bg-secondary py-1 px-xl-5">
+
+            <!-- Espacio izquierdo -->
             <div class="col-lg-6 d-none d-lg-block">
-                <div class="d-inline-flex align-items-center h-100">
-                    <a class="text-body mr-3" href="">Nosotros</a>
-                    <a class="text-body mr-3" asp-controller="Contacto" asp-action="Crear">Contacto</a>
-                    <a class="text-body mr-3" href="">Servicios</a>
-                    <a class="text-body mr-3" href="">Preguntas Frecuentes</a>
-                </div>
             </div>
-            <div class="col-lg-6 text-center text-lg-right">
-                <div class="d-inline-flex align-items-center">
+
+            <!-- Lado derecho -->
+            <div class="col-lg-6">
+                <div class="d-flex justify-content-end align-items-center">
+
+                    <a class="text-body mr-3"
+                       asp-controller="Contacto"
+                       asp-action="Crear">
+                        Contacto
+                    </a>
+
                     @{
                         var autenticado = Context.Session.GetString("Autenticado");
                         var nombre = Context.Session.GetString("Nombre");
                     }
+
                     <div class="btn-group">
                         <button type="button"
                                 class="btn btn-sm btn-light dropdown-toggle"
@@ -93,37 +99,20 @@
 
                         </div>
                     </div>
-                    <div class="btn-group mx-2">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">USD</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">EUR</button>
-                            <button class="dropdown-item" type="button">GBP</button>
-                            <button class="dropdown-item" type="button">CAD</button>
 
-                        </div>
-                    </div>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">EN</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">FR</button>
-                            <button class="dropdown-item" type="button">AR</button>
-                            <button class="dropdown-item" type="button">RU</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-inline-flex align-items-center d-block d-lg-none">
-
-                   <!--Carrito de celular-->
-                    <div class="d-inline-flex align-items-center d-block d-lg-none">
-                        <a href="/Carrito/Index" class="btn px-0 ml-3">
+                    <!-- Carrito para celular -->
+                    <div class="d-inline-flex align-items-center d-block d-lg-none ml-3">
+                        <a href="/Carrito/Index" class="btn px-0">
                             <i class="fas fa-shopping-cart text-primary"></i>
                             <span class="badge text-secondary border border-secondary rounded-circle">
                                 @cantidad
                             </span>
                         </a>
                     </div>
+
                 </div>
             </div>
+
         </div>
         <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
             <div class="col-lg-4">
@@ -170,14 +159,20 @@
                             </div>
                         </div>
                         <a href="" class="nav-item nav-link">Herramientas Manuales</a>
-                        <a href="" class="nav-item nav-link">Pinturas</a>
+                        <a href="" class="nav-item nav-link">Herramientas Eléctricas</a>
+                        <a href="" class="nav-item nav-link">Tornillería y Fijaciones</a>
+                        <a href="" class="nav-item nav-link">Material Eléctrico</a>
                         <a href="" class="nav-item nav-link">Fontanería</a>
-                        <a href="" class="nav-item nav-link">Electricidad</a>
+                        <a href="" class="nav-item nav-link">Pinturas</a>
                         <a href="" class="nav-item nav-link">Construcción</a>
-                        <a href="" class="nav-item nav-link">Jardinería</a>
                         <a href="" class="nav-item nav-link">Seguridad Industrial</a>
-                        <a href="" class="nav-item nav-link">Tornillería</a>
+                        <a href="" class="nav-item nav-link">Jardinería</a>
+                        <a href="" class="nav-item nav-link">Adhesivos y Selladores</a>
+                        <a href="" class="nav-item nav-link">Cerrajería</a>
+                        <a href="" class="nav-item nav-link">Iluminación</a>
+                        <a href="" class="nav-item nav-link">Plomería</a>
                         <a href="" class="nav-item nav-link">Ferretería General</a>
+                        <a href="" class="nav-item nav-link">Accesorios</a>
                     </div>
                 </nav>
             </div>
@@ -192,13 +187,10 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="index.html" class="nav-item nav-link active">Inicio</a>
-                            <a href="shop.html" class="nav-item nav-link">PROAVA</a>
-                            <a href="detail.html" class="nav-item nav-link">PROAVA Detail</a>
+                            
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Servicios <i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <a href="cart.html" class="dropdown-item">PROAVAping Cart</a>
                                     <a href="checkout.html" class="dropdown-item">Cotización</a>
                                 </div>
                             </div>
@@ -223,38 +215,110 @@
         </div>
     </div>
     <!-- Navbar End -->
-    <!-- Products Start -->
+    <!-- Offer Start -->
+    <div class="container-fluid pt-5 pb-3">
+        <div class="row px-xl-5">
+            <div class="col-md-12">
+                <div class="product-offer mb-30" style="height: 300px;">
+                    <img class="img-fluid" src="~/img/offer-1.jpg" alt="">
+                    <div class="offer-text">
+                        <h6 class="text-white text-uppercase">Descuento 20%</h6>
+                        <h3 class="text-white mb-3">Promoción del Mes</h3>
+                        <a href="" class="btn btn-primary">Ver descuentos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Offer End -->
+    <!-- Products destacados Start -->
     <div class="container-fluid pt-5 pb-3">
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4">
             <span class="bg-secondary pr-3">Productos Destacados</span>
         </h2>
 
-        <div class="row px-xl-5">
+        <div class="row px-xl-3">
 
             @foreach (var item in Model)
             {
-                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                    <div class="product-item bg-light mb-4">
+                <div class="col-lg-3 col-md-4 col-sm-3 pb-4">
+                    <div class="product-item bg-light h-100">
 
-                        <div class="text-center py-4">
+                        <div class="d-flex justify-content-center align-items-center p-3"
+                             style="height:150px;">
 
-                            <h6 class="text-decoration-none text-truncate">
+                            <img src="~/img/productos destacados/@item.Imagen"
+                                 class="img-fluid"
+                                 style="max-height:100px; max-width:100%; object-fit:contain;"
+                                 alt="@item.Nombre" />
+
+                        </div>
+
+                        <div class="text-center py-3 px-2">
+
+                            <h6 class="text-truncate">
                                 @item.Nombre
                             </h6>
 
-                            <div class="d-flex align-items-center justify-content-center mt-2">
+                            <div class="d-flex justify-content-center mt-2">
                                 <h5>₡ @item.Precio.ToString("N2")</h5>
                             </div>
 
                             <div class="mt-3">
-                                <a asp-controller="Carrito"
-                                   asp-action="Agregar"
+                                <a asp-controller="Producto"
+                                   asp-action="Detalle"
                                    asp-route-id="@item.IdProducto"
-                                   class="btn btn-primary">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    Agregar
+                                   class="btn btn-outline-primary">
+                                    <i class="fa fa-eye"></i> Ver
                                 </a>
+
+                                <div class="d-flex align-items-center justify-content-center gap-2 mt-3">
+
+                                    <button type="button"
+                                            class="btn btn-outline-primary btn-sm"
+                                            onclick="cambiarCantidad(@item.IdProducto,-1)">
+                                        -
+                                    </button>
+
+                                    <input type="number"
+                                           id="cantidad_@item.IdProducto"
+                                           value="1"
+                                           min="1"
+                                           class="form-control text-center"
+                                           style="width:60px;" />
+
+                                    <button type="button"
+                                            class="btn btn-outline-primary btn-sm"
+                                            onclick="cambiarCantidad(@item.IdProducto,1)">
+                                        +
+                                    </button>
+
+                                </div>
+
+                                <form asp-controller="Carrito"
+                                      asp-action="Agregar"
+                                      method="post"
+                                      class="mt-2">
+
+                                    <input type="hidden"
+                                           name="id"
+                                           value="@item.IdProducto" />
+
+                                    <input type="hidden"
+                                           id="cantidadHidden_@item.IdProducto"
+                                           name="cantidad"
+                                           value="1" />
+
+                                    <button class="btn btn-warning w-100">
+
+                                        <i class="fa fa-shopping-cart"></i>
+                                        Agregar
+
+                                    </button>
+
+                                </form>
                             </div>
+                         
 
                         </div>
 
@@ -265,110 +329,17 @@
         </div>
     </div>
     <!-- Products End -->
-    <!-- Carousel Start -->
-    <div class="container-fluid mb-3">
-        <div class="row px-xl-5">
-            <div class="col-lg-8">
-                <div id="header-carousel" class="carousel slide carousel-fade mb-30 mb-lg-0" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#header-carousel" data-slide-to="1"></li>
-                        <li data-target="#header-carousel" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item position-relative active" style="height: 430px;">
-                            <img class="position-absolute w-100 h-100" src="~/img/carousel-1.jpg" style="object-fit: cover;">
-                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                                <div class="p-3" style="max-width: 700px;">
-                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Herramientas Profesionales</h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">PROAVA Now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item position-relative" style="height: 430px;">
-                            <img class="position-absolute w-100 h-100" src="~/img/carousel-2.jpg" style="object-fit: cover;">
-                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                                <div class="p-3" style="max-width: 700px;">
-                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Materiales de Construcción</h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">PROAVA Now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item position-relative" style="height: 430px;">
-                            <img class="position-absolute w-100 h-100" src="~/img/carousel-3.jpg" style="object-fit: cover;">
-                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                                <div class="p-3" style="max-width: 700px;">
-                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Pinturas y Acabados</h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">PROAVA Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="product-offer mb-30" style="height: 200px;">
-                    <img class="img-fluid" src="~/img/offer-1.jpg" alt="">
-                    <div class="offer-text">
-                        <h6 class="text-white text-uppercase">Descuento 20%</h6>
-                        <h3 class="text-white mb-3">Promoción del Mes</h3>
-                        <a href="" class="btn btn-primary">PROAVA Now</a>
-                    </div>
-                </div>
-                <div class="product-offer mb-30" style="height: 200px;">
-                    <img class="img-fluid" src="~/img/offer-2.jpg" alt="">
-                    <div class="offer-text">
-                        <h6 class="text-white text-uppercase">Descuento 20%</h6>
-                        <h3 class="text-white mb-3">Promoción del Mes</h3>
-                        <a href="" class="btn btn-primary">PROAVA Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Carousel End -->
-    <!-- Featured Start -->
-    <div class="container-fluid pt-5">
-        <div class="row px-xl-5 pb-3">
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
-                    <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0">Productos Garantizados</h5>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
-                    <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
-                    <h5 class="font-weight-semi-bold m-0">Entrega Rápida</h5>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
-                    <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0">Garantía de Calidad</h5>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
-                    <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0">Asesoría Especializada</h5>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Featured End -->
+    
+    
     <!-- Categorías Start -->
     <div class="container-fluid pt-5">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Categorías</span></h2>
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Categorías Principales</span></h2>
         <div class="row px-xl-5 pb-3">
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <a class="text-decoration-none" href="">
                     <div class="cat-item d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="~/img/cat-1.jpg" alt="">
+                            <img class="img-fluid" src="~/img/categorias/cat-1.jpg" alt="">
                         </div>
                         <div class="flex-fill pl-3">
                             <h6>Herramientas y Materiales</h6>
@@ -381,7 +352,7 @@
                 <a class="text-decoration-none" href="">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="~/img/cat-2.jpg" alt="">
+                            <img class="img-fluid" src="~/img/categorias/cat-2.jpg" alt="">
                         </div>
                         <div class="flex-fill pl-3">
                             <h6>Herramientas y Materiales</h6>
@@ -394,7 +365,7 @@
                 <a class="text-decoration-none" href="">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="~/img/cat-3.jpg" alt="">
+                            <img class="img-fluid" src="~/img/categorias/cat-3.jpg" alt="">
                         </div>
                         <div class="flex-fill pl-3">
                             <h6>Herramientas y Materiales</h6>
@@ -403,154 +374,12 @@
                     </div>
                 </a>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="~/img/cat-4.jpg" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Herramientas y Materiales</h6>
-                            <small class="text-body">Más de 100 productos</small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="~/img/cat-4.jpg" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Herramientas y Materiales</h6>
-                            <small class="text-body">Más de 100 productos</small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="~/img/cat-3.jpg" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Herramientas y Materiales</h6>
-                            <small class="text-body">Más de 100 productos</small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="~/img/cat-2.jpg" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Herramientas y Materiales</h6>
-                            <small class="text-body">Más de 100 productos</small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="~/img/cat-1.jpg" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Herramientas y Materiales</h6>
-                            <small class="text-body">Más de 100 productos</small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="~/img/cat-2.jpg" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Herramientas y Materiales</h6>
-                            <small class="text-body">Más de 100 productos</small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="~/img/cat-1.jpg" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Herramientas y Materiales</h6>
-                            <small class="text-body">Más de 100 productos</small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="~/img/cat-4.jpg" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Herramientas y Materiales</h6>
-                            <small class="text-body">Más de 100 productos</small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="~/img/cat-3.jpg" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Herramientas y Materiales</h6>
-                            <small class="text-body">Más de 100 productos</small>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            
         </div>
     </div>
     <!-- Categorías End -->
    
-    <!-- Offer Start -->
-    <div class="container-fluid pt-5 pb-3">
-        <div class="row px-xl-5">
-            <div class="col-md-6">
-                <div class="product-offer mb-30" style="height: 300px;">
-                    <img class="img-fluid" src="~/img/offer-1.jpg" alt="">
-                    <div class="offer-text">
-                        <h6 class="text-white text-uppercase">Descuento 20%</h6>
-                        <h3 class="text-white mb-3">Promoción del Mes</h3>
-                        <a href="" class="btn btn-primary">PROAVA Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="product-offer mb-30" style="height: 300px;">
-                    <img class="img-fluid" src="~/img/offer-2.jpg" alt="">
-                    <div class="offer-text">
-                        <h6 class="text-white text-uppercase">Descuento 20%</h6>
-                        <h3 class="text-white mb-3">Promoción del Mes</h3>
-                        <a href="" class="btn btn-primary">PROAVA Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Offer End -->
-    <!-- Products Start -->
+    <!-- Products Nuevos Start -->
     <div class="container-fluid pt-5 pb-3">
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Nuevos Productos</span></h2>
         <div class="row px-xl-5">
@@ -662,189 +491,64 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="~/img/product-5.jpg" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Producto Ferretero Destacado</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="~/img/product-6.jpg" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Producto Ferretero Destacado</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="~/img/product-7.jpg" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Producto Ferretero Destacado</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="~/img/product-8.jpg" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Producto Ferretero Destacado</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
     <!-- Products End -->
-    <!-- Vendor Start -->
-    <div class="container-fluid py-5">
-        <div class="row px-xl-5">
-            <div class="col">
-                <div class="owl-carousel vendor-carousel">
-                    <div class="bg-light p-4">
-                        <img src="~/img/vendor-1.jpg" alt="">
-                    </div>
-                    <div class="bg-light p-4">
-                        <img src="~/img/vendor-2.jpg" alt="">
-                    </div>
-                    <div class="bg-light p-4">
-                        <img src="~/img/vendor-3.jpg" alt="">
-                    </div>
-                    <div class="bg-light p-4">
-                        <img src="~/img/vendor-4.jpg" alt="">
-                    </div>
-                    <div class="bg-light p-4">
-                        <img src="~/img/vendor-5.jpg" alt="">
-                    </div>
-                    <div class="bg-light p-4">
-                        <img src="~/img/vendor-6.jpg" alt="">
-                    </div>
-                    <div class="bg-light p-4">
-                        <img src="~/img/vendor-7.jpg" alt="">
-                    </div>
-                    <div class="bg-light p-4">
-                        <img src="~/img/vendor-8.jpg" alt="">
-                    </div>
+    
+    <!-- Featured Start -->
+    <div class="container-fluid pt-5">
+        <div class="row px-xl-5 pb-3">
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                    <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
+                    <h5 class="font-weight-semi-bold m-0">Productos Garantizados</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                    <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
+                    <h5 class="font-weight-semi-bold m-0">Entrega Rápida</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                    <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
+                    <h5 class="font-weight-semi-bold m-0">Garantía de Calidad</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                    <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
+                    <h5 class="font-weight-semi-bold m-0">Asesoría Especializada</h5>
                 </div>
             </div>
         </div>
     </div>
-    @RenderBody()
-    <!-- Vendor End -->
+    <!-- Featured End -->
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
         <div class="row px-xl-5 pt-5">
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
                 <h5 class="text-secondary text-uppercase mb-4">Contáctenos</h5>
-                <p class="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor. Rebum tempor no vero est magna amet no</p>
+                <p class="mb-4">Le ayudaremos a resolver</p>
                 <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>San José, Costa Rica</p>
                 <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@ferreproava.com</p>
                 <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+506 2222-22220</p>
             </div>
             <div class="col-lg-8 col-md-12">
                 <div class="row">
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">Quick PROAVA</h5>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our PROAVA</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>PROAVA Detail</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>PROAVAping Cart</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Cotización</a>
-                            <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Contacto Us</a>
-                        </div>
-                    </div>
+                    
                     <div class="col-md-4 mb-5">
                         <h5 class="text-secondary text-uppercase mb-4">Mi Cuenta</h5>
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our PROAVA</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>PROAVA Detail</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>PROAVAping Cart</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Cotización</a>
                             <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Contacto Us</a>
                         </div>
                     </div>
                     <div class="col-md-4 mb-5">
                         <h5 class="text-secondary text-uppercase mb-4">Boletín Informativo</h5>
-                        <p>Duo stet tempor ipsum sit amet magna ipsum tempor est</p>
+                        <p>Ingrese su correo para mantenerse informado <p>
                         <form action="">
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Ingrese su correo electrónico">
@@ -894,6 +598,24 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    @RenderBody()
 </body>
 
 </html>
+<script>
+
+    function cambiarCantidad(id, valor){
+
+    let txt = document.getElementById("cantidad_" + id);
+    let hidden = document.getElementById("cantidadHidden_" + id);
+
+    let cantidad = parseInt(txt.value) + valor;
+
+    if(cantidad < 1)
+    cantidad = 1;
+
+    txt.value = cantidad;
+    hidden.value = cantidad;
+    }
+
+</script>

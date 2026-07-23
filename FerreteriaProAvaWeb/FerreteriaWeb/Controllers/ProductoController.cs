@@ -17,7 +17,7 @@ namespace FerreteriaWeb.Controllers
 
         public async Task<IActionResult> Index()
         {
-            string url = _config["Valores:UrlApi"] + "Producto/ConsultarProductos";
+            string url = _config["Valores:UrlApi"] + "Producto/ConsultarProductosDestacados";
 
             var response = await _httpClient.GetAsync(url);
 
@@ -29,6 +29,21 @@ namespace FerreteriaWeb.Controllers
             var productos = JsonConvert.DeserializeObject<List<ProductoModel>>(json);
 
             return View(productos);
+        }
+        public async Task<IActionResult> Detalle(int id)
+        {
+            string url = _config["Valores:UrlApi"] + $"Producto/ConsultarProducto?idProducto={id}";
+
+            var response = await _httpClient.GetAsync(url);
+
+            if (!response.IsSuccessStatusCode)
+                return RedirectToAction("Index");
+
+            var json = await response.Content.ReadAsStringAsync();
+
+            var producto = JsonConvert.DeserializeObject<ProductoModel>(json);
+
+            return View(producto);
         }
     }
 }
