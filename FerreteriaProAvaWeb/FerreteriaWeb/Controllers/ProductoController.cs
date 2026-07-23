@@ -59,9 +59,8 @@ namespace FerreteriaWeb.Controllers
         [SesionActiva]
         [EsAdmin]
         [HttpGet]
-        public async Task<IActionResult> RegistrarProducto()
+        public IActionResult RegistrarProducto()
         {
-            ViewBag.Categorias = await ObtenerCategoriasAsync();
             return View(new ProductoModel());
         }
 
@@ -71,10 +70,7 @@ namespace FerreteriaWeb.Controllers
         public async Task<IActionResult> RegistrarProducto(ProductoModel model)
         {
             if (!ModelState.IsValid)
-            {
-                ViewBag.Categorias = await ObtenerCategoriasAsync();
                 return View(model);
-            }
 
             var token = HttpContext.Session.GetString("Token");
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
@@ -88,7 +84,6 @@ namespace FerreteriaWeb.Controllers
                 return RedirectToAction("ConsultarProductosAdmin");
             }
 
-            ViewBag.Categorias = await ObtenerCategoriasAsync();
             ViewBag.MensajeError = await response.Content.ReadAsStringAsync();
             return View(model);
         }
@@ -113,7 +108,6 @@ namespace FerreteriaWeb.Controllers
             var json = await response.Content.ReadAsStringAsync();
             var producto = JsonConvert.DeserializeObject<ProductoModel>(json);
 
-            ViewBag.Categorias = await ObtenerCategoriasAsync();
             return View(producto);
         }
 
@@ -123,10 +117,7 @@ namespace FerreteriaWeb.Controllers
         public async Task<IActionResult> EditarProducto(ProductoModel model)
         {
             if (!ModelState.IsValid)
-            {
-                ViewBag.Categorias = await ObtenerCategoriasAsync();
                 return View(model);
-            }
 
             var token = HttpContext.Session.GetString("Token");
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
@@ -140,7 +131,6 @@ namespace FerreteriaWeb.Controllers
                 return RedirectToAction("ConsultarProductosAdmin");
             }
 
-            ViewBag.Categorias = await ObtenerCategoriasAsync();
             ViewBag.MensajeError = await response.Content.ReadAsStringAsync();
             return View(model);
         }
@@ -166,66 +156,6 @@ namespace FerreteriaWeb.Controllers
             }
 
             return RedirectToAction("ConsultarProductosAdmin");
-        }
-
-        #endregion
-
-        #region Módulo de Gestión de Categorías
-
-        [SesionActiva]
-        [EsAdmin]
-        [HttpGet]
-        public async Task<IActionResult> ConsultarCategorias()
-        {
-            var categorias = await ObtenerCategoriasAsync();
-            return View(categorias);
-        }
-
-        [SesionActiva]
-        [EsAdmin]
-        [HttpGet]
-        public IActionResult RegistrarCategoria()
-        {
-            return View(new CategoriaModel());
-        }
-
-        [SesionActiva]
-        [EsAdmin]
-        [HttpPost]
-        public async Task<IActionResult> RegistrarCategoria(CategoriaModel model)
-        {
-            if (!ModelState.IsValid)
-                return View(model);
-
-            var token = HttpContext.Session.GetString("Token");
-            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
-            string url = _config["Valores:UrlApi"] + "Producto/RegistrarCategoriaAPI";
-            var response = await _httpClient.PostAsJsonAsync(url, model);
-
-            if (response.IsSuccessStatusCode)
-            {
-                TempData["MensajeExito"] = "Categoría registrada correctamente.";
-                return RedirectToAction("ConsultarCategorias");
-            }
-
-            ViewBag.MensajeError = await response.Content.ReadAsStringAsync();
-            return View(model);
-        }
-
-        #endregion
-
-        #region Métodos Privados Auxiliares
-
-        private async Task<List<CategoriaModel>> ObtenerCategoriasAsync()
-        {
-            string url = _config["Valores:UrlApi"] + "Producto/ConsultarCategoriasAPI";
-            var response = await _httpClient.GetAsync(url);
-            if (!response.IsSuccessStatusCode)
-                return new List<CategoriaModel>();
-
-            var json = await response.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<List<CategoriaModel>>(json) ?? new List<CategoriaModel>();
         }
 
         #endregion

@@ -53,7 +53,7 @@
                             @if (autenticadoInicio == "1")
                             {
                                 <a asp-action="Configuracion" asp-controller="Usuario" class="dropdown-item"><i class="fas fa-cog text-muted mr-2"></i>Ajustes / Perfil</a>
-                                @if (rolInicio == 1)
+                                @if (rolInicio == 2)
                                 {
                                     <div class="dropdown-divider"></div>
                                     <a asp-action="Index" asp-controller="Admin" class="dropdown-item font-weight-bold text-warning"><i class="fas fa-user-shield mr-2"></i>Administración</a>

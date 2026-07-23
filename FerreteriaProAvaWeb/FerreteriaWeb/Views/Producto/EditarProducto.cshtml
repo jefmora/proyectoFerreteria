@@ -48,22 +48,13 @@
                             </div>
 
                             <div class="col-md-6">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
-                                    <label asp-for="IdCategoria" class="form-label fw-semibold mb-0">Categoría <span class="text-danger">*</span></label>
-                                    <a asp-action="RegistrarCategoria" class="small text-decoration-none"><i class="bi bi-plus-circle me-1"></i>Nueva Categoría</a>
-                                </div>
+                                <label asp-for="IdCategoria" class="form-label fw-semibold">Categoría <span class="text-danger">*</span></label>
                                 <select asp-for="IdCategoria" class="form-select" required>
-                                    @if (ViewBag.Categorias != null && ((IEnumerable<FerreteriaWeb.Models.CategoriaModel>)ViewBag.Categorias).Any())
-                                    {
-                                        @foreach (var cat in (IEnumerable<FerreteriaWeb.Models.CategoriaModel>)ViewBag.Categorias)
-                                        {
-                                            <!option value="@cat.IdCategoria" @(Model.IdCategoria == cat.IdCategoria ? "selected" : "")>@cat.Nombre</!option>
-                                        }
-                                    }
-                                    else
-                                    {
-                                        <option value="1">General</option>
-                                    }
+                                    <!option value="1" @(Model.IdCategoria == 1 ? "selected" : "")>Herramientas Manuales</!option>
+                                    <!option value="2" @(Model.IdCategoria == 2 ? "selected" : "")>Materiales de Construcción</!option>
+                                    <!option value="3" @(Model.IdCategoria == 3 ? "selected" : "")>Fontanería & Tubos</!option>
+                                    <!option value="4" @(Model.IdCategoria == 4 ? "selected" : "")>Electricidad & Iluminación</!option>
+                                    <!option value="5" @(Model.IdCategoria == 5 ? "selected" : "")>Pinturas & Solventes</!option>
                                 </select>
                             </div>
 

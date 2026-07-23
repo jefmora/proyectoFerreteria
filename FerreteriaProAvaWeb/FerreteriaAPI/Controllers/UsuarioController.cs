@@ -19,7 +19,7 @@ namespace FerreteriaAPI.Controllers
 
             var parameters = new DynamicParameters();
             parameters.Add("@Consecutivo", consecutivo);
-            var response = context.QueryFirstOrDefault<UsuarioResponseModel>("spConsultarUsuario", parameters, commandType: CommandType.StoredProcedure);
+            var response = context.QueryFirstOrDefault<UsuarioResponseModel>("spConsultarUsuario", parameters);
 
             if (response != null)
             {
@@ -50,7 +50,7 @@ namespace FerreteriaAPI.Controllers
             parameters.Add("@Consecutivo", consecutivo);
             var response = context.Execute("spCambiarEstadoUsuario", parameters, commandType: CommandType.StoredProcedure);
 
-            if (response > 0 || response == -1)
+            if (response > 0)
             {
                 return Ok("El estado del usuario ha sido actualizado correctamente.");
             }
@@ -68,7 +68,7 @@ namespace FerreteriaAPI.Controllers
             parameters.Add("@ConsecutivoRol", model.ConsecutivoRol);
             var response = context.Execute("spCambiarRolUsuario", parameters, commandType: CommandType.StoredProcedure);
 
-            if (response > 0 || response == -1)
+            if (response > 0)
             {
                 return Ok("El rol del usuario ha sido actualizado correctamente.");
             }
@@ -96,9 +96,9 @@ namespace FerreteriaAPI.Controllers
             parameters.Add("@Consecutivo", model.Consecutivo);
             parameters.Add("@Contrasenna", model.Contrasenna);
             parameters.Add("@IndicadorTemp", false);
-            var response = context.Execute("spActualizarContrasenna", parameters, commandType: CommandType.StoredProcedure);
+            var response = context.Execute("spActualizarContrasenna", parameters);
 
-            if (response > 0 || response == -1)
+            if (response > 0)
             {
                 return Ok("La información se ha actualizado correctamente");
             }
@@ -116,9 +116,9 @@ namespace FerreteriaAPI.Controllers
             parameters.Add("@Identificacion", model.Identificacion);
             parameters.Add("@Nombre", model.Nombre);
             parameters.Add("@CorreoElectronico", model.CorreoElectronico);
-            var response = context.Execute("spActualizarPerfil", parameters, commandType: CommandType.StoredProcedure);
+            var response = context.Execute("spActualizarPerfil", parameters);
 
-            if (response > 0 || response == -1)
+            if (response > 0)
             {
                 return Ok("La información se ha actualizado correctamente");
             }
