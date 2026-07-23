@@ -4,7 +4,13 @@
     var consecutivoRol = Context.Session.GetInt32("ConsecutivoRol");
     var nombreRol = Context.Session.GetString("NombreRol");
 }
+@using FerreteriaWeb.Helpers
+@using FerreteriaWeb.Models
 
+@{
+    var carrito = Context.Session.GetObject<CarritoModel>("Carrito");
+    var cantidadCarrito = carrito?.Items.Sum(x => x.Cantidad) ?? 0;
+}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -80,6 +86,25 @@
                     </ul>
 
                     <ul class="navbar-nav ms-auto align-items-center gap-2">
+                        @if (autenticado == "1" && consecutivoRol == 4)
+                        {
+                            <li class="nav-item me-2">
+                                <a class="nav-link position-relative text-white"
+                                   asp-controller="Carrito"
+                                   asp-action="Index"
+                                   title="Carrito">
+
+                                    <i class="bi bi-cart3 fs-4"></i>
+
+                                    @if (cantidadCarrito > 0)
+                                    {
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                            @cantidadCarrito
+                                        </span>
+                                    }
+                                </a>
+                            </li>
+                        }
                         @if (autenticado == "1")
                         {
                             <li class="nav-item dropdown">
