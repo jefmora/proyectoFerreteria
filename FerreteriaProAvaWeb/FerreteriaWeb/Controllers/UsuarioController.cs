@@ -17,83 +17,145 @@ namespace FerreteriaWeb.Controllers
         [HttpGet]
         public IActionResult Configuracion()
         {
-            var consecutivo = HttpContext.Session.GetInt32("Consecutivo")!.Value;
+            var consecutivo = HttpContext.Session
+                .GetInt32("Consecutivo")!.Value;
 
             using var client = _http.CreateClient();
 
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("Token"));
-            var url = _config["Valores:UrlApi"] + "Usuario/ConsultarUsuarioAPI?consecutivo=" + consecutivo;
+            client.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue(
+                    "Bearer",
+                    HttpContext.Session.GetString("Token"));
+
+            var url = _config["Valores:UrlApi"]
+                + "Usuario/ConsultarUsuarioAPI?consecutivo="
+                + consecutivo;
+
             var response = client.GetAsync(url).Result;
-
-            if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.NotFound)
-            {
-                var datos = response.Content.ReadFromJsonAsync<UsuarioModel>().Result;
-
-                return View("Configuracion", datos);
-            }
-            else if (response.StatusCode == HttpStatusCode.Unauthorized)
-            {
-                return RedirectToAction("LoginBasic", "Auth");
-            }
-
-            throw new Exception("Error al cambiar la contraseña");
-        }
-
-        [HttpPost]
-        public IActionResult CambiarContrasenna(UsuarioModel model)
-        {
-            model.Consecutivo = HttpContext.Session.GetInt32("Consecutivo")!.Value;
-
-            using var client = _http.CreateClient();
-
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("Token"));
-            var url = _config["Valores:UrlApi"] + "Usuario/CambiarContrasennaAPI";
-            var response = client.PutAsJsonAsync(url, model).Result;
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                return RedirectToAction("LoginBasic", "Auth");
+                var datos = response.Content
+                    .ReadFromJsonAsync<UsuarioModel>()
+                    .Result;
+
+                return View("Configuracion", datos);
             }
-            else if (response.StatusCode == HttpStatusCode.BadRequest)
+            else if (response.StatusCode == HttpStatusCode.NotFound)
             {
-                ViewBag.MensajeSeguridad = response.Content.ReadAsStringAsync().Result;
-                return View("Configuracion", model);
+                return View("Configuracion", new UsuarioModel());
             }
             else if (response.StatusCode == HttpStatusCode.Unauthorized)
             {
                 return RedirectToAction("LoginBasic", "Auth");
             }
 
-            throw new Exception("Error al cambiar la contraseña");
+            throw new Exception("Error al consultar el usuario");
         }
 
+
         [HttpPost]
-        public IActionResult CambiarPerfil(UsuarioModel model)
+        public IActionResult CambiarContrasenna(
+            UsuarioModel model)
         {
-            model.Consecutivo = HttpContext.Session.GetInt32("Consecutivo")!.Value;
+            model.Consecutivo = HttpContext.Session
+                .GetInt32("Consecutivo")!.Value;
 
             using var client = _http.CreateClient();
 
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("Token"));
-            var url = _config["Valores:UrlApi"] + "Usuario/CambiarPerfilAPI";
-            var response = client.PutAsJsonAsync(url, model).Result;
+            client.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue(
+                    "Bearer",
+                    HttpContext.Session.GetString("Token"));
 
-            if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.BadRequest)
+            var url = _config["Valores:UrlApi"]
+                + "Usuario/CambiarContrasennaAPI";
+
+            var response =
+                client.PutAsJsonAsync(url, model).Result;
+
+            if (response.StatusCode == HttpStatusCode.OK)
             {
-                HttpContext.Session.SetString("Nombre", model!.Nombre);
+                return RedirectToAction(
+                    "LoginBasic",
+                    "Auth");
+            }
+            else if (response.StatusCode == HttpStatusCode.BadRequest)
+            {
+                ViewBag.MensajeSeguridad =
+                    response.Content
+                        .ReadAsStringAsync()
+                        .Result;
 
-                ViewBag.MensajePerfil = response.Content.ReadAsStringAsync().Result;
                 return View("Configuracion", model);
             }
             else if (response.StatusCode == HttpStatusCode.Unauthorized)
             {
-                return RedirectToAction("LoginBasic", "Auth");
+                return RedirectToAction(
+                    "LoginBasic",
+                    "Auth");
             }
 
-            throw new Exception("Error al cambiar la contraseña");
+            throw new Exception(
+                "Error al cambiar la contraseña");
+        }
+
+
+        [HttpPost]
+        public IActionResult CambiarPerfil(
+            UsuarioModel model)
+        {
+            model.Consecutivo = HttpContext.Session
+                .GetInt32("Consecutivo")!.Value;
+
+            using var client = _http.CreateClient();
+
+            client.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue(
+                    "Bearer",
+                    HttpContext.Session.GetString("Token"));
+
+            var url = _config["Valores:UrlApi"]
+                + "Usuario/CambiarPerfilAPI";
+
+            var response =
+                client.PutAsJsonAsync(url, model).Result;
+
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                HttpContext.Session.SetString(
+                    "Nombre",
+                    model.Nombre);
+
+                ViewBag.MensajePerfil =
+                    response.Content
+                        .ReadAsStringAsync()
+                        .Result;
+
+                return View("Configuracion", model);
+            }
+            else if (response.StatusCode == HttpStatusCode.BadRequest)
+            {
+                ViewBag.MensajePerfil =
+                    response.Content
+                        .ReadAsStringAsync()
+                        .Result;
+
+                return View("Configuracion", model);
+            }
+            else if (response.StatusCode == HttpStatusCode.Unauthorized)
+            {
+                return RedirectToAction(
+                    "LoginBasic",
+                    "Auth");
+            }
+
+            throw new Exception(
+                "Error al cambiar el perfil");
         }
 
         #endregion
+
 
         #region Módulo de Administración de Usuarios
 
@@ -102,65 +164,146 @@ namespace FerreteriaWeb.Controllers
         public IActionResult ConsultarUsuarios()
         {
             using var client = _http.CreateClient();
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("Token"));
-            var url = _config["Valores:UrlApi"] + "Usuario/ConsultarUsuariosAPI";
+
+            client.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue(
+                    "Bearer",
+                    HttpContext.Session.GetString("Token"));
+
+            var url = _config["Valores:UrlApi"]
+                + "Usuario/ConsultarUsuariosAPI";
+
             var response = client.GetAsync(url).Result;
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                var datos = response.Content.ReadFromJsonAsync<List<UsuarioModel>>().Result;
-                return View("ConsultarUsuarios", datos ?? new List<UsuarioModel>());
+                var datos =
+                    response.Content
+                        .ReadFromJsonAsync<List<UsuarioModel>>()
+                        .Result;
+
+                return View(
+                    "ConsultarUsuarios",
+                    datos ?? new List<UsuarioModel>());
+            }
+
+            if (response.StatusCode == HttpStatusCode.Unauthorized)
+            {
+                return RedirectToAction(
+                    "LoginBasic",
+                    "Auth");
+            }
+
+            if (response.StatusCode == HttpStatusCode.BadRequest)
+            {
+                var mensaje =
+                    response.Content
+                        .ReadAsStringAsync()
+                        .Result;
+
+                TempData["MensajeError"] =
+                    "Error al consultar los usuarios: "
+                    + mensaje;
+            }
+            else
+            {
+                TempData["MensajeError"] =
+                    "No se pudieron consultar los usuarios.";
+            }
+
+            return View(
+                "ConsultarUsuarios",
+                new List<UsuarioModel>());
+        }
+
+
+        [EsAdmin]
+        [HttpPost]
+        public IActionResult CambiarEstadoUsuario(
+            int consecutivo)
+        {
+            using var client = _http.CreateClient();
+
+            client.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue(
+                    "Bearer",
+                    HttpContext.Session.GetString("Token"));
+
+            var url = _config["Valores:UrlApi"]
+                + "Usuario/CambiarEstadoUsuarioAPI?consecutivo="
+                + consecutivo;
+
+            var response =
+                client.PutAsync(url, null).Result;
+
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                TempData["MensajeExito"] =
+                    "El estado del usuario ha sido actualizado correctamente.";
             }
             else if (response.StatusCode == HttpStatusCode.Unauthorized)
             {
-                return RedirectToAction("LoginBasic", "Auth");
-            }
-
-            return View("ConsultarUsuarios", new List<UsuarioModel>());
-        }
-
-        [EsAdmin]
-        [HttpPost]
-        public IActionResult CambiarEstadoUsuario(int consecutivo)
-        {
-            using var client = _http.CreateClient();
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("Token"));
-            var url = _config["Valores:UrlApi"] + "Usuario/CambiarEstadoUsuarioAPI?consecutivo=" + consecutivo;
-            var response = client.PutAsync(url, null).Result;
-
-            if (response.StatusCode == HttpStatusCode.OK)
-            {
-                TempData["MensajeExito"] = "El estado del usuario ha sido actualizado correctamente.";
+                return RedirectToAction(
+                    "LoginBasic",
+                    "Auth");
             }
             else
             {
-                TempData["MensajeError"] = "No se pudo cambiar el estado del usuario.";
+                TempData["MensajeError"] =
+                    "No se pudo cambiar el estado del usuario.";
             }
 
-            return RedirectToAction("ConsultarUsuarios");
+            return RedirectToAction(
+                "ConsultarUsuarios");
         }
+
 
         [EsAdmin]
         [HttpPost]
-        public IActionResult CambiarRolUsuario(int consecutivo, int consecutivoRol)
+        public IActionResult CambiarRolUsuario(
+            int consecutivo,
+            int consecutivoRol)
         {
             using var client = _http.CreateClient();
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("Token"));
-            var url = _config["Valores:UrlApi"] + "Usuario/CambiarRolUsuarioAPI";
-            
-            var payload = new { Consecutivo = consecutivo, ConsecutivoRol = consecutivoRol };
-            var response = client.PutAsJsonAsync(url, payload).Result;
+
+            client.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue(
+                    "Bearer",
+                    HttpContext.Session.GetString("Token"));
+
+            var url = _config["Valores:UrlApi"]
+                + "Usuario/CambiarRolUsuarioAPI";
+
+            var payload = new
+            {
+                Consecutivo = consecutivo,
+                ConsecutivoRol = consecutivoRol
+            };
+
+            var response =
+                client.PutAsJsonAsync(
+                    url,
+                    payload).Result;
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                TempData["MensajeExito"] = "El rol del usuario ha sido actualizado correctamente.";
+                TempData["MensajeExito"] =
+                    "El rol del usuario ha sido actualizado correctamente.";
+            }
+            else if (response.StatusCode == HttpStatusCode.Unauthorized)
+            {
+                return RedirectToAction(
+                    "LoginBasic",
+                    "Auth");
             }
             else
             {
-                TempData["MensajeError"] = "No se pudo actualizar el rol del usuario.";
+                TempData["MensajeError"] =
+                    "No se pudo actualizar el rol del usuario.";
             }
 
-            return RedirectToAction("ConsultarUsuarios");
+            return RedirectToAction(
+                "ConsultarUsuarios");
         }
 
         #endregion
