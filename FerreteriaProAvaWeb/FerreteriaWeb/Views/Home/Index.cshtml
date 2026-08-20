@@ -67,28 +67,34 @@
                                     <i class="fa fa-eye"></i> Ver
                                 </a>
 
-                                <div class="d-flex align-items-center justify-content-center gap-2 mt-3">
+                            <div data-cantidad-control>
 
-                                    <button type="button"
-                                            class="btn btn-outline-primary btn-sm"
-                                            onclick="cambiarCantidad(@item.IdProducto,-1)">
-                                        -
-                                    </button>
+                                <button type="button"
+                                        class="btn btn-warning"
+                                        data-cantidad-btn="-1">
+                                    -
+                                </button>
 
-                                    <input type="number"
-                                           id="cantidad_@item.IdProducto"
-                                           value="1"
-                                           min="1"
-                                           class="form-control text-center"
-                                           style="width:60px;" />
+                                <input type="number"
+                                       id="cantidad_@item.IdProducto"
+                                       value="1"
+                                       min="1"
+                                       class="form-control text-center"
+                                       data-cantidad-input />
 
-                                    <button type="button"
-                                            class="btn btn-outline-primary btn-sm"
-                                            onclick="cambiarCantidad(@item.IdProducto,1)">
-                                        +
-                                    </button>
+                                <button type="button"
+                                        class="btn btn-warning"
+                                        data-cantidad-btn="1">
+                                    +
+                                </button>
 
-                                </div>
+                                <input type="hidden"
+                                       id="cantidadHidden_@item.IdProducto"
+                                       name="cantidad"
+                                       value="1"
+                                       data-cantidad-hidden />
+
+                            </div>
 
                                 <form asp-controller="Carrito"
                                       asp-action="Agregar"
@@ -329,30 +335,6 @@
     <link href="~/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
 
     <link href="~/css/style.css" rel="stylesheet" />
-}
-@section Scripts {
-
-    <script src="~/lib/easing/easing.min.js"></script>
-
-    <script src="~/lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <script src="~/js/main.js"></script>
-
-    <script>
-        function cambiarCantidad(id, valor) {
-
-        let txt = document.getElementById("cantidad_" + id);
-        let hidden = document.getElementById("cantidadHidden_" + id);
-
-        let cantidad = parseInt(txt.value) + valor;
-
-        if (cantidad < 1)
-        cantidad = 1;
-
-        txt.value = cantidad;
-        hidden.value = cantidad;
-        }
-    </script>
 }
 <!-- Featured End -->
 

@@ -29,3 +29,24 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+.product-image {
+    max-height: 420px;
+    transition: .3s;
+}
+
+    .product-image:hover {
+        transform: scale(1.08);
+    }
+
+.product-detail-card {
+    border-radius: 18px;
+}
+
+.product-detail-quantity {
+    width: 70px;
+}
+
+.btn-warning {
+    font-weight: 600;
+}

@@ -148,7 +148,8 @@
                                        class="form-control"
                                        placeholder="••••••••"
                                        required />
-                                <span class="input-group-text cursor-pointer" onclick="togglePasswordVisibility('txtContrasenna', this)">
+                                <span class="input-group-text cursor-pointer"
+                                      data-toggle-password="txtContrasenna">
                                     <i class="bx bx-hide"></i>
                                 </span>
                             </div>
@@ -165,7 +166,8 @@
                                        class="form-control"
                                        placeholder="••••••••"
                                        required />
-                                <span class="input-group-text cursor-pointer" onclick="togglePasswordVisibility('txtConfirmarContrasenna', this)">
+                                <span class="input-group-text cursor-pointer"
+                                      data-toggle-password="txtConfirmarContrasenna">
                                     <i class="bx bx-hide"></i>
                                 </span>
                             </div>
@@ -182,38 +184,3 @@
 
     </div>
 </div>
-
-@section Scripts {
-    <script>
-        // 1. Validar que las contraseñas coincidan antes de enviar
-        document.getElementById('formCambiarContrasenna').addEventListener('submit', function (e) {
-            const pass = document.getElementById('txtContrasenna').value;
-            const confirmPass = document.getElementById('txtConfirmarContrasenna').value;
-            const errorDiv = document.getElementById('errorPassword');
-
-            if (pass !== confirmPass) {
-                e.preventDefault(); // Detiene el envío
-                errorDiv.classList.remove('d-none'); // Muestra la alerta
-                document.getElementById('txtConfirmarContrasenna').focus();
-            } else {
-                errorDiv.classList.add('d-none');
-            }
-        });
-
-        // 2. Función para alternar la visibilidad de la contraseña (Ver/Ocultar)
-        function togglePasswordVisibility(inputId, iconContainer) {
-            const input = document.getElementById(inputId);
-            const icon = iconContainer.querySelector('i');
-
-            if (input.type === "password") {
-                input.type = "text";
-                icon.classList.remove('bx-hide');
-                icon.classList.add('bx-show');
-            } else {
-                input.type = "password";
-                icon.classList.remove('bx-show');
-                icon.classList.add('bx-hide');
-            }
-        }
-    </script>
-}

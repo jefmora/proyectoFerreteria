@@ -62,6 +62,13 @@ public class ContactoController(IHttpClientFactory http, IConfiguration config) 
         using var client = CrearClienteAutenticado();
         var url = config["Valores:UrlApi"] + "Contacto/";
         var contactoResponse = await client.GetAsync(url + "ObtenerContacto?idContacto=" + id);
+        ViewBag.Estados = new List<string>
+    {
+        "Pendiente",
+        "En proceso",
+        "Respondido",
+        "Cerrado"
+    };
 
         if (contactoResponse.StatusCode == HttpStatusCode.Unauthorized)
             return RedirectToAction("LoginBasic", "Auth");
@@ -78,6 +85,8 @@ public class ContactoController(IHttpClientFactory http, IConfiguration config) 
                 ? await respuestasResponse.Content.ReadFromJsonAsync<List<RespuestaContactoModel>>() ?? []
                 : []
         };
+
+
         return View(model);
     }
 
