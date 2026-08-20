@@ -23,9 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Templates\RecuperarAcceso.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+  <None Update="Templates\*.html">
+    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+  </None>
+</ItemGroup>
 
 </Project>

@@ -41,13 +41,23 @@
             <h2 class="h5">Estado</h2>
             <form asp-action="CambiarEstado" method="post" class="d-flex gap-2 mb-3">
                 <input type="hidden" name="IdContacto" value="@contacto.IdContacto" />
-                <select name="Estado" class="form-select">
-                    @foreach (var estado in new[] { "Pendiente", "En proceso", "Respondido", "Cerrado" })
-                    { <option value="@estado" selected="@(contacto.Estado == estado)">@estado</option> }
-                </select>
+
+                    <select name="Estado" class="form-select">
+                        @foreach (var estado in ViewBag.Estados)
+                        {
+                            <option value="@estado"
+                                    selected="@(contacto.Estado == estado)">
+                                @estado
+                            </option>
+                        }
+                    </select>
+
                 <button class="btn btn-outline-primary">Guardar</button>
             </form>
-            <form asp-action="Eliminar" asp-route-id="@contacto.IdContacto" method="post" onsubmit="return confirm('¿Desea eliminar esta solicitud y sus respuestas?');">
+                <form asp-action="Eliminar"
+                      asp-route-id="@contacto.IdContacto"
+                      method="post"
+                      data-confirm="¿Desea eliminar esta solicitud y sus respuestas?">
                 <button class="btn btn-outline-danger w-100">Eliminar solicitud</button>
             </form>
         </div></div>

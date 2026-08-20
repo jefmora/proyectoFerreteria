@@ -111,29 +111,68 @@ public class ContactoController(IConfiguration config, IUtilesService utiles) : 
         return filas == 0 ? NotFound("No se encontró el contacto solicitado.") : Ok("Contacto eliminado correctamente.");
     }
 
+     private static string CargarPlantilla(string nombreArchivo)
+    {
+        string ruta = Path.Combine(
+            AppContext.BaseDirectory,
+            "Templates",
+            nombreArchivo);
+
+        return System.IO.File.ReadAllText(ruta);
+    }
+
     private async Task NotificarNuevaSolicitudAsync(RegistrarContactoRequestModel model)
     {
-        var destinoSoporte = config["ContactoSoporte:CorreoDestino"] ?? config["Correos:CuentaGmail"];
-        var asunto = "Nueva solicitud de contacto: " + model.Asunto;
-        var detalle = $"<p>Se recibió una nueva solicitud de contacto.</p>" +
-                      $"<p><strong>Nombre:</strong> {Html(model.Nombre)}<br>" +
-                      $"<strong>Correo:</strong> {Html(model.Correo)}<br>" +
-                      $"<strong>Teléfono:</strong> {Html(model.Telefono)}</p>" +
-                      $"<p><strong>Asunto:</strong> {Html(model.Asunto)}</p><p>{Html(model.Mensaje).Replace("\n", "<br>")}</p>";
+        var destinoSoporte =
+            config["ContactoSoporte:CorreoDestino"]
+            ?? config["Correos:CuentaGmail"];
 
-        await EnviarCorreoSinInterrumpirAsync(destinoSoporte, asunto, detalle);
+        var plantillaSoporte = CargarPlantilla("NuevaSolicitudContacto.html");
+
+        plantillaSoporte = plantillaSoporte
+            .Replace("{{NOMBRE}}", Html(model.Nombre))
+            .Replace("{{CORREO}}", Html(model.Correo))
+            .Replace("{{TELEFONO}}", Html(model.Telefono))
+            .Replace("{{ASUNTO}}", Html(model.Asunto))
+            .Replace("{{MENSAJE}}", Html(model.Mensaje).Replace("\n", "<br>"));
+
+        await EnviarCorreoSinInterrumpirAsync(
+            destinoSoporte,
+            "Nueva solicitud de contacto: " + model.Asunto,
+            plantillaSoporte);
+
+
+        var plantillaCliente = CargarPlantilla("ConfirmacionContacto.html");
+
+        plantillaCliente = plantillaCliente
+            .Replace("{{NOMBRE}}", Html(model.Nombre))
+            .Replace("{{ASUNTO}}", Html(model.Asunto));
+
         await EnviarCorreoSinInterrumpirAsync(
             model.Correo,
             "Recibimos su solicitud de soporte",
-            $"<p>Hola {Html(model.Nombre)},</p><p>Recibimos su solicitud sobre <strong>{Html(model.Asunto)}</strong>. Nuestro equipo le responderá pronto.</p>");
+            plantillaCliente);
     }
 
-    private Task NotificarRespuestaAsync(ContactoModel contacto, ResponderContactoRequestModel respuesta) =>
-        EnviarCorreoSinInterrumpirAsync(
+
+    private Task NotificarRespuestaAsync(
+    ContactoModel contacto,
+    ResponderContactoRequestModel respuesta)
+    {
+        var plantilla = CargarPlantilla("RespuestaContacto.html");
+
+        plantilla = plantilla
+            .Replace("{{NOMBRE}}", Html(contacto.Nombre))
+            .Replace("{{ASUNTO}}", Html(contacto.Asunto))
+            .Replace("{{RESPUESTA}}", Html(respuesta.Respuesta).Replace("\n", "<br>"))
+            .Replace("{{RESPONDIDO_POR}}", Html(respuesta.RespondidoPor));
+
+        return EnviarCorreoSinInterrumpirAsync(
             contacto.Correo,
             "Respuesta a su solicitud: " + contacto.Asunto,
-            $"<p>Hola {Html(contacto.Nombre)},</p><p>Respondimos su solicitud <strong>{Html(contacto.Asunto)}</strong>:</p>" +
-            $"<p>{Html(respuesta.Respuesta).Replace("\n", "<br>")}</p><p>Atentamente,<br>{Html(respuesta.RespondidoPor)}</p>");
+            plantilla);
+    }
+
 
     private async Task EnviarCorreoSinInterrumpirAsync(string? destinatario, string asunto, string cuerpo)
     {
