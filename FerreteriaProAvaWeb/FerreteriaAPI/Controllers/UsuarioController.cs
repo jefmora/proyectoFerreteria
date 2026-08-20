@@ -15,11 +15,16 @@ namespace FerreteriaAPI.Controllers
         [HttpGet("ConsultarUsuarioAPI")]
         public IActionResult ConsultarUsuarioAPI(int consecutivo)
         {
-            using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
+            using var context = new SqlConnection(
+                _config["ConnectionStrings:DefaultConnection"]);
 
             var parameters = new DynamicParameters();
             parameters.Add("@IdUsuario", consecutivo);
-            var response = context.QueryFirstOrDefault<UsuarioResponseModel>("spConsultarUsuario", parameters);
+
+            var response = context.QueryFirstOrDefault<UsuarioResponseModel>(
+                "spConsultarUsuario",
+                parameters,
+                commandType: CommandType.StoredProcedure);
 
             if (response != null)
             {
@@ -29,17 +34,42 @@ namespace FerreteriaAPI.Controllers
             return NotFound("No se ha encontrado el usuario");
         }
 
-        [HttpPut("CambiarContrasennaAPI")]
-        public IActionResult CambiarContrasennaAPI(CambiarContrasennaRequestModel model)
-        {
-            model.Contrasenna = BCrypt.Net.BCrypt.HashPassword(model.Contrasenna);
 
-            using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
+        [HttpGet("ConsultarUsuariosAPI")]
+        public IActionResult ConsultarUsuariosAPI()
+        {
+            using var context = new SqlConnection(
+                _config["ConnectionStrings:DefaultConnection"]);
+
+            try
+            {
+                var response = context.Query<UsuarioResponseModel>(
+                    "spConsultarUsuarios",
+                    commandType: CommandType.StoredProcedure
+                ).ToList();
+
+                return Ok(response);
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        [HttpPut("CambiarContrasennaAPI")]
+        public IActionResult CambiarContrasennaAPI(
+            CambiarContrasennaRequestModel model)
+        {
+            model.Contrasenna =
+                BCrypt.Net.BCrypt.HashPassword(model.Contrasenna);
+
+            using var context = new SqlConnection(
+                _config["ConnectionStrings:DefaultConnection"]);
 
             var parameters = new DynamicParameters();
             parameters.Add("@IdUsuario", model.Consecutivo);
             parameters.Add("@Contrasenna", model.Contrasenna);
-            var response = context.Execute("spActualizarContrasenna", parameters);
 
             try
             {
@@ -56,10 +86,13 @@ namespace FerreteriaAPI.Controllers
             }
         }
 
-            [HttpPut("CambiarPerfilAPI")]
-        public IActionResult CambiarPerfilAPI(CambiarPerfilRequestModel model)
+
+        [HttpPut("CambiarPerfilAPI")]
+        public IActionResult CambiarPerfilAPI(
+            CambiarPerfilRequestModel model)
         {
-            using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
+            using var context = new SqlConnection(
+                _config["ConnectionStrings:DefaultConnection"]);
 
             var parameters = new DynamicParameters();
             parameters.Add("@IdUsuario", model.Consecutivo);
@@ -68,7 +101,11 @@ namespace FerreteriaAPI.Controllers
             parameters.Add("@CorreoElectronico", model.CorreoElectronico);
             parameters.Add("@Telefono", model.Telefono);
             parameters.Add("@Direccion", model.Direccion);
-            var response = context.Execute("spActualizarPerfil", parameters);
+
+            var response = context.Execute(
+                "spActualizarPerfil",
+                parameters,
+                commandType: CommandType.StoredProcedure);
 
             if (response > 0)
             {
@@ -77,6 +114,5 @@ namespace FerreteriaAPI.Controllers
 
             return BadRequest("No se ha actualizado su perfil");
         }
-
     }
 }
