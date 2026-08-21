@@ -4,7 +4,8 @@
     document.querySelectorAll("[data-cantidad-control]").forEach(function (control) {
 
         const input = control.querySelector("[data-cantidad-input]");
-        const hidden = control.querySelector("[data-cantidad-hidden]");
+        const scope = control.closest("form") || control;
+        const hidden = scope.querySelector("[data-cantidad-hidden]");
 
         if (!input || !hidden) {
             return;
@@ -26,6 +27,18 @@
                 input.value = cantidad;
                 hidden.value = cantidad;
             });
+        });
+
+        input.addEventListener("change", function () {
+
+            let cantidad = parseInt(input.value) || 1;
+
+            if (cantidad < 1) {
+                cantidad = 1;
+            }
+
+            input.value = cantidad;
+            hidden.value = cantidad;
         });
     });
 

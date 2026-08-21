@@ -1,343 +1,193 @@
 @model List<FerreteriaWeb.Models.ProductoModel>
 
-@using FerreteriaWeb.Helpers
-@using FerreteriaWeb.Models
-
 @{
     ViewData["Title"] = "Inicio";
 
-    var carrito = Context.Session.GetObject<CarritoModel>("Carrito") ?? new CarritoModel();
-    var cantidad = carrito.Items.Sum(x => x.Cantidad);
+    var productos = Model ?? new List<FerreteriaWeb.Models.ProductoModel>();
+    var productosDestacados = productos.Take(8).ToList();
+    var categorias = (ViewBag.Categorias as List<FerreteriaWeb.Models.CategoriaModel>) ?? new List<FerreteriaWeb.Models.CategoriaModel>();
+    var categoryImages = new[] { "cat-1.jpg", "cat-2.jpg", "cat-3.jpg", "cat-4.jpg" };
 }
 
-    <!-- Offer Start -->
-    <div class="container-fluid pt-5 pb-3">
-        <div class="row px-xl-5">
-            <div class="col-md-12">
-                <div class="product-offer mb-30" style="height: 300px;">
-                    <img class="img-fluid" src="~/img/offer-1.jpg" alt="">
-                    <div class="offer-text">
-                        <h6 class="text-white text-uppercase">Descuento 20%</h6>
-                        <h3 class="text-white mb-3">Promoción del Mes</h3>
-                        <a href="" class="btn btn-primary">Ver descuentos</a>
+<section class="hardware-hero">
+    <div class="container-fluid px-xl-5">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-7">
+                <span class="hero-kicker">Ferretería ProAva</span>
+                <h1>Todo para construir, reparar y mantener su proyecto.</h1>
+                <p>
+                    Herramientas, materiales y asesoría técnica en un solo lugar. Compre rápido,
+                    revise disponibilidad y agregue lo que ocupa al carrito sin complicarse.
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a asp-controller="Producto" asp-action="Index" class="btn btn-warning btn-lg fw-bold">
+                        <i class="bi bi-bag-check me-2"></i>Ver productos
+                    </a>
+                    <a asp-controller="Contacto" asp-action="Crear" class="btn btn-outline-light btn-lg">
+                        <i class="bi bi-headset me-2"></i>Pedir asesoría
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="hero-showcase">
+                    <img src="~/img/offer-1.jpg" alt="Herramientas de ferretería" />
+                    <div class="hero-offer">
+                        <span>Oferta del mes</span>
+                        <strong>20% menos</strong>
+                        <small>en herramientas seleccionadas</small>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Offer End -->
-    <!-- Products destacados Start -->
-    <div class="container-fluid pt-5 pb-3">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4">
-            <span class="bg-secondary pr-3">Productos Destacados</span>
-        </h2>
+</section>
 
-        <div class="row px-xl-3">
+<section class="container-fluid px-xl-5 py-4">
+    <div class="row g-3">
+        <div class="col-lg-3 col-md-6">
+            <div class="service-tile">
+                <i class="bi bi-patch-check"></i>
+                <div>
+                    <h3>Calidad garantizada</h3>
+                    <p>Productos resistentes para trabajo real.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="service-tile">
+                <i class="bi bi-truck"></i>
+                <div>
+                    <h3>Entrega rápida</h3>
+                    <p>Despacho ágil para no detener su obra.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="service-tile">
+                <i class="bi bi-tools"></i>
+                <div>
+                    <h3>Inventario útil</h3>
+                    <p>Herramientas, pintura, medición y más.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="service-tile">
+                <i class="bi bi-person-check"></i>
+                <div>
+                    <h3>Asesoría experta</h3>
+                    <p>Le ayudamos a escoger bien desde el inicio.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-            @foreach (var item in Model)
+@if (categorias.Any())
+{
+    <section class="container-fluid px-xl-5 py-4">
+        <div class="section-heading">
+            <span>Catálogo</span>
+            <h2>Categorías disponibles</h2>
+        </div>
+        <div class="row g-4">
+            @for (var i = 0; i < categorias.Count; i++)
             {
-                <div class="col-lg-3 col-md-4 col-sm-3 pb-4">
-                    <div class="product-item bg-light h-100">
+                var categoria = categorias[i];
+                var imageName = categoryImages[i % categoryImages.Length];
 
-                        <div class="d-flex justify-content-center align-items-center p-3"
-                             style="height:150px;">
-
-                            <img src="~/img/productos destacados/@item.Imagen"
-                                 class="img-fluid"
-                                 style="max-height:100px; max-width:100%; object-fit:contain;"
-                                 alt="@item.Nombre" />
-
+                <div class="col-lg-3 col-md-6">
+                    <a class="category-card category-link"
+                       asp-controller="Producto"
+                       asp-action="Index"
+                       asp-route-idCategoria="@categoria.IdCategoria"
+                       asp-route-categoria="@categoria.Nombre">
+                        <img src="~/img/Categorias/@imageName" alt="@categoria.Nombre" />
+                        <div>
+                            <h3>@categoria.Nombre</h3>
+                            <p>@(string.IsNullOrWhiteSpace(categoria.Descripcion) ? "Ver productos de esta categoría." : categoria.Descripcion)</p>
                         </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </section>
+}
 
-                        <div class="text-center py-3 px-2">
+<section class="container-fluid px-xl-5 py-4">
+    <div class="section-heading">
+        <span>Más vendidos</span>
+        <h2>Productos destacados</h2>
+    </div>
 
-                            <h6 class="text-truncate">
-                                @item.Nombre
-                            </h6>
-
-                            <div class="d-flex justify-content-center mt-2">
-                                <h5>₡ @item.Precio.ToString("N2")</h5>
+    @if (!productosDestacados.Any())
+    {
+        <div class="empty-store">
+            <i class="bi bi-box-seam"></i>
+            <h3>No hay productos disponibles</h3>
+            <p>Cuando se cargue el inventario, aparecerá en esta sección.</p>
+        </div>
+    }
+    else
+    {
+        <div class="row g-4">
+            @foreach (var item in productosDestacados)
+            {
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <article class="product-card h-100">
+                        <a asp-controller="Producto"
+                           asp-action="Detalle"
+                           asp-route-id="@item.IdProducto"
+                           class="product-image-wrap">
+                            <img src="~/img/Productos destacados/@item.Imagen"
+                                 alt="@item.Nombre" />
+                        </a>
+                        <div class="product-card-body">
+                            <span class="product-category">@(string.IsNullOrEmpty(item.NombreCategoria) ? "General" : item.NombreCategoria)</span>
+                            <h3>@item.Nombre</h3>
+                            <p class="product-description">Categoría: @(string.IsNullOrEmpty(item.NombreCategoria) ? "General" : item.NombreCategoria)</p>
+                            <div class="product-meta">
+                                <strong>₡ @item.Precio.ToString("N2")</strong>
+                                @if (item.StockActual > 0)
+                                {
+                                    <span class="stock-badge in-stock">@item.StockActual en stock</span>
+                                }
+                                else
+                                {
+                                    <span class="stock-badge out-stock">Agotado</span>
+                                }
                             </div>
-
-                            <div class="mt-3">
+                            <div class="product-actions">
                                 <a asp-controller="Producto"
                                    asp-action="Detalle"
                                    asp-route-id="@item.IdProducto"
-                                   class="btn btn-outline-primary">
-                                    <i class="fa fa-eye"></i> Ver
+                                   class="btn btn-outline-dark">
+                                    <i class="bi bi-eye me-1"></i>Ver
                                 </a>
-
-                            <div data-cantidad-control>
-
-                                <button type="button"
-                                        class="btn btn-warning"
-                                        data-cantidad-btn="-1">
-                                    -
-                                </button>
-
-                                <input type="number"
-                                       id="cantidad_@item.IdProducto"
-                                       value="1"
-                                       min="1"
-                                       class="form-control text-center"
-                                       data-cantidad-input />
-
-                                <button type="button"
-                                        class="btn btn-warning"
-                                        data-cantidad-btn="1">
-                                    +
-                                </button>
-
-                                <input type="hidden"
-                                       id="cantidadHidden_@item.IdProducto"
-                                       name="cantidad"
-                                       value="1"
-                                       data-cantidad-hidden />
-
-                            </div>
-
                                 <form asp-controller="Carrito"
                                       asp-action="Agregar"
                                       method="post"
-                                      class="mt-2">
-
-                                    <input type="hidden"
-                                           name="id"
-                                           value="@item.IdProducto" />
-
-                                    <input type="hidden"
-                                           id="cantidadHidden_@item.IdProducto"
-                                           name="cantidad"
-                                           value="1" />
-
-                                    <button class="btn btn-warning w-100">
-
-                                        <i class="fa fa-shopping-cart"></i>
-                                        Agregar
-
+                                      class="add-cart-form">
+                                    <input type="hidden" name="id" value="@item.IdProducto" />
+                                    <input type="hidden" name="cantidad" value="1" data-cantidad-hidden />
+                                    <div class="quantity-stepper" data-cantidad-control>
+                                        <button type="button" data-cantidad-btn="-1" aria-label="Restar cantidad">-</button>
+                                        <input type="number"
+                                               value="1"
+                                               min="1"
+                                               data-cantidad-input
+                                               aria-label="Cantidad" />
+                                        <button type="button" data-cantidad-btn="1" aria-label="Sumar cantidad">+</button>
+                                    </div>
+                                    <button class="btn btn-warning fw-bold" @(item.StockActual <= 0 ? "disabled" : "")>
+                                        <i class="bi bi-cart-plus me-1"></i>Agregar
                                     </button>
-
                                 </form>
                             </div>
-                         
-
                         </div>
-
-                    </div>
+                    </article>
                 </div>
             }
-
         </div>
-    </div>
-    <!-- Products End -->
-    
-    
-    <!-- Categorías Start -->
-    <div class="container-fluid pt-5">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Categorías Principales</span></h2>
-        <div class="row px-xl-5 pb-3">
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="~/img/categorias/cat-1.jpg" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Herramientas y Materiales</h6>
-                            <small class="text-body">Más de 100 productos</small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="~/img/categorias/cat-2.jpg" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Herramientas y Materiales</h6>
-                            <small class="text-body">Más de 100 productos</small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item img-zoom d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="~/img/categorias/cat-3.jpg" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6>Herramientas y Materiales</h6>
-                            <small class="text-body">Más de 100 productos</small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            
-        </div>
-    </div>
-    <!-- Categorías End -->
-   
-    <!-- Products Nuevos Start -->
-    <div class="container-fluid pt-5 pb-3">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Nuevos Productos</span></h2>
-        <div class="row px-xl-5">
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="~/img/product-1.jpg" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Producto Ferretero Destacado</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="~/img/product-2.jpg" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Producto Ferretero Destacado</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="~/img/product-3.jpg" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Producto Ferretero Destacado</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="~/img/product-4.jpg" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Producto Ferretero Destacado</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-    <!-- Products End -->
-    
-    <!-- Featured Start -->
-    <div class="container-fluid pt-5">
-        <div class="row px-xl-5 pb-3">
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
-                    <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0">Productos Garantizados</h5>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
-                    <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
-                    <h5 class="font-weight-semi-bold m-0">Entrega Rápida</h5>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
-                    <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0">Garantía de Calidad</h5>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
-                    <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0">Asesoría Especializada</h5>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Featured End -->
-@section PageStyles{
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
-
-    <link href="~/lib/animate/animate.min.css" rel="stylesheet" />
-
-    <link href="~/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-
-    <link href="~/css/style.css" rel="stylesheet" />
-}
-<!-- Featured End -->
-
-<div class="mb-5"></div>
-
-    
+    }
+</section>

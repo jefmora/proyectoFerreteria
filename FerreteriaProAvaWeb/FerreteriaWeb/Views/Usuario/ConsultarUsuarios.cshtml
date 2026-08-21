@@ -2,10 +2,10 @@
 
 @{
     ViewData["Title"] = "Gestión de Usuarios";
+    var roles = (ViewBag.Roles as List<FerreteriaWeb.Models.RolModel>) ?? new List<FerreteriaWeb.Models.RolModel>();
 }
 
 <div class="container-fluid py-4">
-    <!-- Header Breadcrumb & Title -->
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
             <nav aria-label="breadcrumb">
@@ -21,7 +21,6 @@
         </a>
     </div>
 
-    <!-- Alert Messages -->
     @if (TempData["MensajeExito"] != null)
     {
         <div class="alert alert-success alert-dismissible fade show shadow-sm mb-4" role="alert">
@@ -37,7 +36,6 @@
         </div>
     }
 
-    <!-- Table Card -->
     <div class="card border-0 shadow-sm">
         <div class="card-header bg-white py-3 border-bottom d-flex justify-content-between align-items-center">
             <h5 class="fw-bold mb-0 text-secondary">Lista de Usuarios Registrados</h5>
@@ -77,13 +75,22 @@
                                     <td class="fw-bold">@u.Nombre</td>
                                     <td>@u.CorreoElectronico</td>
                                     <td>
-                                        <form asp-action="CambiarRolUsuario" method="post" class="d-inline-flex align-items-center gap-1">
-                                            <input type="hidden" name="consecutivo" value="@u.Consecutivo" />
-                                            <select name="consecutivoRol" class="form-select form-select-sm border-secondary-subtle" onchange="this.form.submit()">
-                                                <!option value="1" @(u.ConsecutivoRol == 1 ? "selected" : "")>Administrador</!option>
-                                                <!option value="2" @(u.ConsecutivoRol == 2 ? "selected" : "")>Usuario</!option>
-                                            </select>
-                                        </form>
+                                        @if (roles.Any())
+                                        {
+                                            <form asp-action="CambiarRolUsuario" method="post" class="d-inline-flex align-items-center gap-1">
+                                                <input type="hidden" name="consecutivo" value="@u.Consecutivo" />
+                                                <select name="consecutivoRol" class="form-select form-select-sm border-secondary-subtle" onchange="this.form.submit()">
+                                                    @foreach (var rol in roles)
+                                                    {
+                                                        <!option value="@rol.ConsecutivoRol" @(u.ConsecutivoRol == rol.ConsecutivoRol ? "selected" : "")>@rol.NombreRol</!option>
+                                                    }
+                                                </select>
+                                            </form>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-light text-dark border">@(string.IsNullOrEmpty(u.NombreRol) ? "Sin rol" : u.NombreRol)</span>
+                                        }
                                     </td>
                                     <td>
                                         @if (u.Estado)

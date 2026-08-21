@@ -20,20 +20,18 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/FerreteriaWeb.styles.css" asp-append-version="true" />
     @await RenderSectionAsync("PageStyles", required: false)
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light border-bottom box-shadow mb-3 py-2"
-             style="background-color:#66696E;">
+        <nav class="navbar navbar-expand-lg navbar-dark app-navbar py-3">
             <div class="container-fluid px-4">
                 <a class="navbar-brand fw-bold text-uppercase d-flex align-items-center gap-2" asp-area="" asp-controller="Home" asp-action="Index">
-                    <span class="bg-warning text-dark px-2 py-1 rounded me-1"><i class="bi bi-tools"></i> FERRE</span>
+                    <span class="brand-badge"><i class="bi bi-tools"></i> FERRE</span>
                     <span class="text-white">PROAVA</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                        aria-expanded="false" aria-label="Mostrar navegación">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="mainNavbar">
@@ -41,9 +39,11 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house-door me-1"></i> Inicio</a>
                         </li>
-
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Contacto" asp-action="Crear">Contacto</a>
+                            <a class="nav-link" asp-controller="Producto" asp-action="Index"><i class="bi bi-grid me-1"></i> Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Contacto" asp-action="Crear"><i class="bi bi-headset me-1"></i> Contacto</a>
                         </li>
                         @if (Context.Session.GetString("Autenticado") == "1")
                         {
@@ -93,9 +93,7 @@
                                    asp-controller="Carrito"
                                    asp-action="Index"
                                    title="Carrito">
-
                                     <i class="bi bi-cart3 fs-4"></i>
-
                                     @if (cantidadCarrito > 0)
                                     {
                                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -145,15 +143,16 @@
         </nav>
     </header>
 
-    <div class="container-fluid px-4">
+    <div class="container-fluid px-4 page-shell">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted bg-light mt-5 py-3">
-        <div class="container-fluid text-center">
-            &copy; 2026 - Ferretería ProAva - Sistema de Gestión Ferretera
+    <footer class="app-footer mt-5 py-4">
+        <div class="container-fluid px-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+            <strong>Ferretería ProAva</strong>
+            <span>&copy; 2026 - Sistema de gestión ferretera</span>
         </div>
     </footer>
 

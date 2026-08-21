@@ -24,8 +24,24 @@ namespace FerreteriaAPI.Controllers
             using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
 
             var response = context.Query<ProductoModel>(
-                "spConsultarProductos",
-                commandType: CommandType.StoredProcedure);
+                """
+                SELECT
+                    P.IdProducto,
+                    P.SKU,
+                    P.Nombre,
+                    P.Precio,
+                    P.Imagen,
+                    P.Descripcion,
+                    P.StockActual,
+                    P.StockMinimo,
+                    P.Estado,
+                    P.IdCategoria,
+                    ISNULL(C.Nombre, 'General') AS NombreCategoria
+                FROM Producto P
+                LEFT JOIN Categoria C ON P.IdCategoria = C.IdCategoria
+                WHERE P.Estado = 1
+                ORDER BY P.Nombre;
+                """);
 
             return Ok(response);
         }
@@ -35,8 +51,54 @@ namespace FerreteriaAPI.Controllers
             using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
 
             var response = context.Query<ProductoModel>(
-                "spConsultarProductosDestacados",
-                commandType: CommandType.StoredProcedure);
+                """
+                SELECT TOP 8
+                    P.IdProducto,
+                    P.SKU,
+                    P.Nombre,
+                    P.Precio,
+                    P.Imagen,
+                    P.Descripcion,
+                    P.StockActual,
+                    P.StockMinimo,
+                    P.Estado,
+                    P.IdCategoria,
+                    ISNULL(C.Nombre, 'General') AS NombreCategoria
+                FROM Producto P
+                LEFT JOIN Categoria C ON P.IdCategoria = C.IdCategoria
+                WHERE P.Estado = 1
+                ORDER BY P.Nombre;
+                """);
+
+            return Ok(response);
+        }
+
+        [HttpGet("ConsultarProductosPorCategoria")]
+        public IActionResult ConsultarProductosPorCategoria(int idCategoria)
+        {
+            using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
+
+            var response = context.Query<ProductoModel>(
+                """
+                SELECT
+                    P.IdProducto,
+                    P.SKU,
+                    P.Nombre,
+                    P.Precio,
+                    P.Imagen,
+                    P.Descripcion,
+                    P.StockActual,
+                    P.StockMinimo,
+                    P.Estado,
+                    P.IdCategoria,
+                    ISNULL(C.Nombre, 'General') AS NombreCategoria
+                FROM Producto P
+                LEFT JOIN Categoria C ON P.IdCategoria = C.IdCategoria
+                WHERE P.Estado = 1
+                  AND P.IdCategoria = @IdCategoria
+                ORDER BY P.Nombre;
+                """,
+                new { IdCategoria = idCategoria });
 
             return Ok(response);
         }
@@ -48,7 +110,7 @@ namespace FerreteriaAPI.Controllers
             using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
 
             var response = context.Query<ProductoModel>(
-                "spConsultarProductosDestacados",
+                "spConsultarProductosAdmin",
                 commandType: CommandType.StoredProcedure);
 
             return Ok(response);
@@ -60,9 +122,24 @@ namespace FerreteriaAPI.Controllers
             using var context = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]);
 
             var response = context.QueryFirstOrDefault<ProductoModel>(
-                "spConsultarProducto",
-                new { IdProducto = idProducto },
-                commandType: CommandType.StoredProcedure);
+                """
+                SELECT
+                    P.IdProducto,
+                    P.SKU,
+                    P.Nombre,
+                    P.Precio,
+                    P.Imagen,
+                    P.Descripcion,
+                    P.StockActual,
+                    P.StockMinimo,
+                    P.Estado,
+                    P.IdCategoria,
+                    ISNULL(C.Nombre, 'General') AS NombreCategoria
+                FROM Producto P
+                LEFT JOIN Categoria C ON P.IdCategoria = C.IdCategoria
+                WHERE P.IdProducto = @IdProducto;
+                """,
+                new { IdProducto = idProducto });
 
             if (response == null)
                 return NotFound();

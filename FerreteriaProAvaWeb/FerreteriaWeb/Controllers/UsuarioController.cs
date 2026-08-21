@@ -39,6 +39,12 @@ namespace FerreteriaWeb.Controllers
                     .ReadFromJsonAsync<UsuarioModel>()
                     .Result;
 
+                if (datos != null && string.IsNullOrEmpty(datos.NombreRol))
+                {
+                    datos.NombreRol = HttpContext.Session.GetString("NombreRol") ?? string.Empty;
+                    datos.ConsecutivoRol = HttpContext.Session.GetInt32("ConsecutivoRol") ?? datos.ConsecutivoRol;
+                }
+
                 return View("Configuracion", datos);
             }
             else if (response.StatusCode == HttpStatusCode.NotFound)
@@ -60,6 +66,8 @@ namespace FerreteriaWeb.Controllers
         {
             model.Consecutivo = HttpContext.Session
                 .GetInt32("Consecutivo")!.Value;
+            model.ConsecutivoRol = HttpContext.Session.GetInt32("ConsecutivoRol") ?? model.ConsecutivoRol;
+            model.NombreRol = HttpContext.Session.GetString("NombreRol") ?? model.NombreRol;
 
             using var client = _http.CreateClient();
 
@@ -174,6 +182,10 @@ namespace FerreteriaWeb.Controllers
                 + "Usuario/ConsultarUsuariosAPI";
 
             var response = client.GetAsync(url).Result;
+            var rolesResponse = client.GetAsync(_config["Valores:UrlApi"] + "Usuario/ConsultarRolesAPI").Result;
+            ViewBag.Roles = rolesResponse.StatusCode == HttpStatusCode.OK
+                ? rolesResponse.Content.ReadFromJsonAsync<List<RolModel>>().Result ?? new List<RolModel>()
+                : new List<RolModel>();
 
             if (response.StatusCode == HttpStatusCode.OK)
             {

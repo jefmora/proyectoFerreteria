@@ -39,7 +39,7 @@ namespace FerreteriaWeb.Controllers
 
             var json = await response.Content.ReadAsStringAsync();
 
-            var productos = JsonConvert.DeserializeObject<List<ProductoModel>>(json);
+            var productos = JsonConvert.DeserializeObject<List<ProductoModel>>(json) ?? new List<ProductoModel>();
 
             var producto = productos.FirstOrDefault(x => x.IdProducto == id);
 

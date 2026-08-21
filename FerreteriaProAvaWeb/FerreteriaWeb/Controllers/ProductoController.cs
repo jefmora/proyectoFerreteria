@@ -18,9 +18,11 @@ namespace FerreteriaWeb.Controllers
             _httpClient = factory.CreateClient();
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? idCategoria, string? categoria)
         {
-            string url = _config["Valores:UrlApi"] + "Producto/ConsultarProductosDestacados";
+            string url = idCategoria.HasValue
+                ? _config["Valores:UrlApi"] + $"Producto/ConsultarProductosPorCategoria?idCategoria={idCategoria.Value}"
+                : _config["Valores:UrlApi"] + "Producto/ConsultarProductos";
 
             var response = await _httpClient.GetAsync(url);
 
@@ -29,7 +31,9 @@ namespace FerreteriaWeb.Controllers
 
             var json = await response.Content.ReadAsStringAsync();
 
-            var productos = JsonConvert.DeserializeObject<List<ProductoModel>>(json);
+            var productos = JsonConvert.DeserializeObject<List<ProductoModel>>(json) ?? new List<ProductoModel>();
+
+            ViewBag.CategoriaSeleccionada = categoria;
 
             return View(productos);
         }

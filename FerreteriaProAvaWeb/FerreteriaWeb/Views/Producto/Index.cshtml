@@ -1,41 +1,94 @@
-﻿@model List<FerreteriaWeb.Models.ProductoModel>
+@model List<FerreteriaWeb.Models.ProductoModel>
 
 @{
     ViewData["Title"] = "Productos";
+    var productos = Model ?? new List<FerreteriaWeb.Models.ProductoModel>();
 }
 
-<div class="container mt-4">
-
-    <div class="row">
-
-        @foreach (var item in Model)
-        {
-            <div class="col-md-4 mb-3">
-
-                <div class="card">
-
-                    <div class="card-body">
-
-                        <h5>@item.Nombre</h5>
-
-                        <h4>₡ @item.Precio.ToString("N2")</h4>
-
-                        <p>Stock: @item.StockActual</p>
-
-                        <a asp-controller="Carrito"
-                           asp-action="Agregar"
-                           asp-route-idProducto="@item.IdProducto"
-                           class="btn btn-primary w-100">
-                            Agregar al carrito
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-        }
-
+<section class="catalog-header">
+    <div>
+        <span>Inventario ProAva</span>
+        <h1>@(string.IsNullOrEmpty(ViewBag.CategoriaSeleccionada) ? "Productos de ferretería" : ViewBag.CategoriaSeleccionada)</h1>
+        <p>Revise precios, stock y agregue al carrito los artículos que necesita para su proyecto.</p>
     </div>
+    <div class="d-flex flex-wrap gap-2">
+        @if (!string.IsNullOrEmpty(ViewBag.CategoriaSeleccionada))
+        {
+            <a asp-controller="Producto" asp-action="Index" class="btn btn-warning">
+                <i class="bi bi-grid me-2"></i>Ver todo
+            </a>
+        }
+        <a asp-controller="Contacto" asp-action="Crear" class="btn btn-outline-light">
+            <i class="bi bi-headset me-2"></i>Solicitar ayuda
+        </a>
+    </div>
+</section>
 
-</div>
+<section class="container-fluid px-0 py-4">
+    @if (!productos.Any())
+    {
+        <div class="empty-store">
+            <i class="bi bi-box-seam"></i>
+            <h3>No hay productos disponibles</h3>
+            <p>Registre productos desde administración para verlos aquí.</p>
+        </div>
+    }
+    else
+    {
+        <div class="row g-4">
+            @foreach (var item in productos)
+            {
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <article class="product-card h-100">
+                        <a asp-controller="Producto"
+                           asp-action="Detalle"
+                           asp-route-id="@item.IdProducto"
+                           class="product-image-wrap">
+                            <img src="~/img/Productos destacados/@item.Imagen"
+                                 alt="@item.Nombre" />
+                        </a>
+                        <div class="product-card-body">
+                            <span class="product-category">@(string.IsNullOrEmpty(item.NombreCategoria) ? "General" : item.NombreCategoria)</span>
+                            <h3>@item.Nombre</h3>
+                            <p class="product-description">Categoría: @(string.IsNullOrEmpty(item.NombreCategoria) ? "General" : item.NombreCategoria)</p>
+                            <div class="product-meta">
+                                <strong>₡ @item.Precio.ToString("N2")</strong>
+                                @if (item.StockActual > 0)
+                                {
+                                    <span class="stock-badge in-stock">@item.StockActual en stock</span>
+                                }
+                                else
+                                {
+                                    <span class="stock-badge out-stock">Agotado</span>
+                                }
+                            </div>
+                            <div class="product-actions">
+                                <a asp-controller="Producto"
+                                   asp-action="Detalle"
+                                   asp-route-id="@item.IdProducto"
+                                   class="btn btn-outline-dark">
+                                    <i class="bi bi-eye me-1"></i>Ver detalle
+                                </a>
+                                <form asp-controller="Carrito"
+                                      asp-action="Agregar"
+                                      method="post"
+                                      class="add-cart-form">
+                                    <input type="hidden" name="id" value="@item.IdProducto" />
+                                    <input type="hidden" name="cantidad" value="1" data-cantidad-hidden />
+                                    <div class="quantity-stepper" data-cantidad-control>
+                                        <button type="button" data-cantidad-btn="-1" aria-label="Restar cantidad">-</button>
+                                        <input type="number" value="1" min="1" data-cantidad-input aria-label="Cantidad" />
+                                        <button type="button" data-cantidad-btn="1" aria-label="Sumar cantidad">+</button>
+                                    </div>
+                                    <button class="btn btn-warning fw-bold" @(item.StockActual <= 0 ? "disabled" : "")>
+                                        <i class="bi bi-cart-plus me-1"></i>Agregar
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            }
+        </div>
+    }
+</section>
